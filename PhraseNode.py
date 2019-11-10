@@ -6,7 +6,7 @@ class PhraseNode(object):
         self.phraseID = pid
         self.phrase = phrase
         self.children = []
-        # Is it the last character of the word.`
-        self.word_finished = False
-        # How many times this character appeared in the addition process
-        self.counter = 1
+        self.word_finished = False  # Is it the last character of the word.
+        self.counter = 1 # How many times this character appeared in the addition process
+
+        self.referencedBy = {}
