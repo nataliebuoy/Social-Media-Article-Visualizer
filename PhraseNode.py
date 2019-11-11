@@ -8,5 +8,3 @@ class PhraseNode(object):
         self.children = []
         self.word_finished = False  # Is it the last character of the word.
         self.counter = 1 # How many times this character appeared in the addition process
-
-        self.referencedBy = {}
