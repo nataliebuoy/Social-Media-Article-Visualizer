@@ -4,25 +4,36 @@ from KeywordNode import KeywordNode
 
 
 class Main:
-    #create dictionary of articles (key: articleID, value: ArticleNode)
-    articleDict = {}
-    #create dictionary of keywords (key: keywordID, value: KeywordNode)
-    keywordDict = {}
+    def __init__(self):
+        print ""
 
-    root = PhraseNode('*', -1)
+    def addKeywords(self, root, wordFile, kDict):
+        pid = -1  # article ID starts at 1
+        with open(wordFile, 'r') as file:
+            for line in file:
+                pid += 1
+                for word in line.split():
+                    self.addKeywordToTrie(root, word, pid, kDict)
 
     def addArticleToDictionary(self, aid, aDict):
         global articleDict
-        # add articleID to dictionary if it doesn't already exist
         if aid not in aDict:
             newArticle = ArticleNode(aid)
             aDict[aid] = newArticle
 
+    def addKeywordToDictionary(self, aid, aDict, kDict, node):
+        global keywordDict
+        currentArticle = aDict[aid]
+        if node.phraseID not in currentArticle.keywordDict:
+            currentArticle.keywordDict[node.phraseID] = node.phrase
+            aDict[aid] = currentArticle
+            keyword = kDict[node.phraseID]
+            keyword.referencedByList.append(currentArticle)
+            kDict[node.phraseID] = keyword
 
     #Trie structure allows for keyword phrases
-    def addKeywordToTrie(root, phrase, pid, kDict):
+    def addKeywordToTrie(self, root, phrase, pid, kDict):
         global keywordDict
-
         word = []
         word = phrase.split()
         node = root
@@ -52,11 +63,11 @@ class Main:
         kDict[pid] = newKeywordNode
     #end addKeywordToTrie
 
+
     # https://www.toptal.com/algorithms/needle-in-a-haystack-a-nifty-large-scale-text-search-algorithm
-    def traverseRecords(root, text, aDict, kDict):
+    def traverseRecords(self, root, text, aDict, kDict):
         global articleDict
         global keywordDict
-
         node = root
 
         # Traverses file without saving items to memory
@@ -78,27 +89,12 @@ class Main:
                     if flag:
                         node = node.children[childIndex]
                         if node.word_finished:
-
-                            #addArticleToDictionary(aid, aDict)
-
                             # Add article to articleDict if it doesn't already exist
-                            if aid not in aDict:
-                                newArticle = ArticleNode(aid)
-                                aDict[aid] = newArticle
-
+                            self.addArticleToDictionary(aid, aDict)
                             # Add keywords to current article if it doesn't already exist
-                            currentArticle = aDict[aid]
-                            if node.phraseID not in currentArticle.keywordDict:
-                                currentArticle.keywordDict[node.phraseID] = node.phrase
-                                aDict[aid] = currentArticle
-
-                                keyword = kDict[node.phraseID]
-                                keyword.referencedByList.append(currentArticle)
-                                kDict[node.phraseID] = keyword
-
+                            self.addKeywordToDictionary(aid, aDict, kDict, node)
                             #reset node iterator to root
                             node = root
-
                         continue  # i += 1
                     # if word does not exist in phrase
                     else:
@@ -106,13 +102,11 @@ class Main:
                             continue  # i += 1
                         else:
                             node = root
-                        ###
-                    ###
                 ### end while
         print ("total # of articles: " + str(aid))
     ### end findPhrases
 
-    def writeArticles(articleDict):
+    def writeArticles(self, articleDict):
         f = open("articles.txt", "w+")
         f.write(str(len(articleDict)) + "\n") # total number of articles
         f.write("'articleID','keyword'\n")
@@ -127,7 +121,7 @@ class Main:
         f.close()
     #end writeArticles
 
-    def writeKeywords(keywordDict):
+    def writeKeywords(self, keywordDict):
         f = open("keywords.txt", "w+")
         f.write(str(len(keywordDict)) + "\n")  # total number of keywords
         f.write("'articleCount','keyword','articleID'\n")
@@ -142,19 +136,15 @@ class Main:
         f.close()
     # end writeKeywords
 
-    if __name__ == "__main__":
-        addKeywordToTrie(root, "Facebook", 0, keywordDict)
-        addKeywordToTrie(root, "Twitter", 1, keywordDict)
-        addKeywordToTrie(root, "Reddit", 2, keywordDict)
-        addKeywordToTrie(root, "Instagram", 3, keywordDict)
-        addKeywordToTrie(root, "LinkedIn", 4, keywordDict)
-        addKeywordToTrie(root, "chemoradiation", 5, keywordDict)
-        addKeywordToTrie(root, "content", 6, keywordDict)
-        addKeywordToTrie(root, "marketing", 7, keywordDict)
-        addKeywordToTrie(root, "normalization", 8, keywordDict)
-        addKeywordToTrie(root, "knowledge", 9, keywordDict)
-        addKeywordToTrie(root, "research", 10, keywordDict)
+if __name__ == "__main__":
+    root = PhraseNode('*', -1)
+    # create dictionary of articles (key: articleID, value: ArticleNode)
+    articleDict = {}
+    # create dictionary of keywords (key: keywordID, value: KeywordNode)
+    keywordDict = {}
 
-        traverseRecords(root, "sma", articleDict, keywordDict)
-        writeArticles(articleDict)
-        writeKeywords(keywordDict)
+    obj = Main()
+    obj.addKeywords(root, "adhoc_wordlist.csv", keywordDict)
+    obj.traverseRecords(root, "sma100.csv", articleDict, keywordDict)
+    obj.writeArticles(articleDict)
+    obj.writeKeywords(keywordDict)
