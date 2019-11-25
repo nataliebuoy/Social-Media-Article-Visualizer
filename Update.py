@@ -7,16 +7,18 @@ import csv
 
 class UpdateKeywords:
     def __init__(self):
-        #self.root = root
         print("hi")
 
     def addKeywords(self, root, wordFile, kDict):
+        counter = 0
         pid = -1  # article ID starts at 1
         with open(wordFile, 'r', encoding="utf8") as file:
             for line in file:
                 pid += 1
                 for word in line.split():
-                    self.addKeywordToTrie(root, word, pid, kDict)
+                    if counter != 0:
+                        self.addKeywordToTrie(root, word, pid, kDict)
+                    counter += 1
 
     #Trie structure allows for keyword phrases
     def addKeywordToTrie(self, root, phrase, pid, kDict):
@@ -51,7 +53,6 @@ class UpdateKeywords:
     #end addKeywordToTrie
 
     def getKeywordDict(self, root):
-        #root = PhraseNode('*', -1)
         keywordDict = {}
 
         obj = UpdateKeywords()
@@ -68,6 +69,9 @@ class UpdateArticles:
         if aid not in self.aDict:
             newArticle = ArticleNode(aid, title)
             self.aDict[aid] = newArticle
+
+        return self.aDict
+
 
     def addKeywordToDictionary(self, aid, kDict, node):
         currentArticle = self.aDict[aid]
@@ -95,20 +99,19 @@ class UpdateArticles:
                 if flag:
                     node = node.children[childIndex]
                     if node.word_finished:
-                        # Add article to articleDict if it doesn't already exist
-                        self.addArticleToDictionary(aid, title)
-                        # Add keywords to current article if it doesn't already exist
+
+                        #self.addArticleToDictionary(aid, title)
                         self.addKeywordToDictionary(aid, kDict, node)
-                        #reset node iterator to root
+
                         node = root
-                    continue  # i += 1
+                    continue
                 # if word does not exist in phrase
                 else:
                     if node == root:
                         continue  # i += 1
                     else:
                         node = root
-            ### end while
+
         #iterate through abstract
         if abstract != None:
             for word in abstract.split():
@@ -124,20 +127,19 @@ class UpdateArticles:
                 if flag:
                     node = node.children[childIndex]
                     if node.word_finished:
-                        # Add article to articleDict if it doesn't already exist
-                        self.addArticleToDictionary(aid, title)
-                        # Add keywords to current article if it doesn't already exist
+
+                        #self.addArticleToDictionary(aid, title)
                         self.addKeywordToDictionary(aid, kDict, node)
-                        #reset node iterator to root
+
                         node = root
-                    continue  # i += 1
+                    continue
                 # if word does not exist in phrase
                 else:
                     if node == root:
-                        continue  # i += 1
+                        continue
                     else:
                         node = root
-            ### end while
+
         return self.aDict
 
     def updateCited(self, aid, title, citedID):
@@ -145,22 +147,38 @@ class UpdateArticles:
         self.aDict[aid].cited.append(citedID)
         return self.aDict
 
+    def writeArticles(self, articleDict):
+        with open('articles.csv', mode='w', encoding="utf8") as f:
+            writeArticles = csv.writer(f, delimiter=",", quotechar='"', quoting=csv.QUOTE_ALL, lineterminator = '\n')
+            
+            writeArticles.writerow(["article_ID","article_title"])
+            for aid in articleDict:
+                article = articleDict[aid]
+                id = int(article.articleID)
+                title = str(article.articleTitle)
+                writeArticles.writerow([id,title])
+
     def writeArticleKewords(self, articleDict):
-        with open('articleKeywords.csv', mode='w') as f:
+        with open('articleKeywords.csv', mode='w', encoding="utf8") as f:
             writeArticles = csv.writer(f, delimiter=",", quotechar='"', quoting=csv.QUOTE_ALL, lineterminator = '\n')
 
+            writeArticles.writerow(["article_ID","article_title","keyword_ID","keyword"])
             for aid in articleDict:
+                if aid == 830:
+                    print("break")
                 article = articleDict[aid]
                 for keyID in article.keywordDict:
                     keyword = article.keywordDict[keyID]
                     id = int(article.articleID)
                     title = str(article.articleTitle)
-                    writeArticles.writerow([id,title,keyword])
+                    kid = int(keyID)
+                    writeArticles.writerow([id,title,kid,keyword])
 
     def writeArticleCited(self, articleDict):
-        with open('articleCited.csv', mode='w') as f:
+        with open('articleCited.csv', mode='w', encoding="utf8") as f:
             writeArticles = csv.writer(f, delimiter=",", quotechar='"', quoting=csv.QUOTE_ALL, lineterminator = '\n')
 
+            writeArticles.writerow(["article_ID","article_title","cited_id"])
             for aid in articleDict:
                 article = articleDict[aid]
                 for cid in article.cited:
@@ -168,7 +186,8 @@ class UpdateArticles:
                     title = str(article.articleTitle)
                     c_id = int(cid)
                     writeArticles.writerow([id,title,cid])
-                 
+     
+    #for testing
     def writeKeywords(self, keywordDict):
         f = open("keywords.txt", "w+", encoding="utf8")
         f.write(str(len(keywordDict)) + "\n")  # total number of keywords

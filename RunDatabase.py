@@ -21,14 +21,14 @@ class PythonApplication2:
 									  database="stephen")    
         cursor = connection.cursor() 
 
-        postgreSQL_select_Query = "SELECT * FROM public.sma ORDER BY id ASC LIMIT 100"
+        postgreSQL_select_Query = "SELECT * FROM public.sma ORDER BY id ASC LIMIT 10000"
         cursor.execute(postgreSQL_select_Query)
         #use fetchall to get all articles, use fetchmany(x) to get x number of articles"
-        artTemp = cursor.fetchmany(100)
+        artTemp = cursor.fetchmany(10000)
 
-        postgreSQL_select_Query = "SELECT * FROM public.cites ORDER BY article_id ASC, cites_article_id ASC LIMIT 600"
+        postgreSQL_select_Query = "SELECT * FROM public.cites ORDER BY article_id ASC, cites_article_id ASC LIMIT 50000"
         cursor.execute(postgreSQL_select_Query)
-        allCites = cursor.fetchmany(600)
+        allCites = cursor.fetchmany(50000)
   
         currentCiteID = 0
 
@@ -53,20 +53,19 @@ class PythonApplication2:
 
 
             #TODO create article objects
-            print("\nArticle ID =", row[0]);
-            print("Title =", row[6]);
-            print("Cites =");
-            for i in artCites:
-                print(i)
-            print("Abstract =", row[3]);
+            print("\nArticle ID =", row[0])
+            print("Title =", row[6])
+            print("Abstract =", row[3])
 
-            str = row[3]
-            #print(str)
+            """print("Cites =")
+            for i in artCites:
+                print(i)"""
 
             if row[0] == 2:
                 print("break")
 
-            articleDict = obj2.findKeywordInAbstract(root, row[0], row[6], str, keywordDict)
+            articleDict = obj2.addArticleToDictionary(row[0], row[6])
+            articleDict = obj2.findKeywordInAbstract(root, row[0], row[6], row[3], keywordDict)
 
     except (Exception, psycopg2.Error) as error :
         print ("Error while fetching  data from PostgreSQL", error)
@@ -76,7 +75,9 @@ class PythonApplication2:
        if(connection):
             cursor.close()
             connection.close()
+            obj2.writeArticles(articleDict)
             obj2.writeArticleKewords(articleDict)
             obj2.writeArticleCited(articleDict)
             obj2.writeKeywords(keywordDict)
+            print(len(articleDict))
             print("Closing connection to database")
