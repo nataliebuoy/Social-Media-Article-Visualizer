@@ -1,9 +1,9 @@
 7
 'articleID','keyword'
+'19','Management,'
+'23','Theory,'
 '37','Influence,'
 '50','Relationship,'
-'19','Management,'
 '85','Service,'
-'23','Theory,'
 '88','Information,'
 '91','Information,'
