@@ -1,12 +1,13 @@
 class ArticleNode:
-    def __init__(self,aid,title):
-        self.articleTitle = title
+    def __init__(self,aid):
+        self.name =""
         self.articleID = aid
-        self.keywordList = [] #contains ids
-        self.keywordDict = {} #contains ids and nodes
-        self.cited = [] #contains article ids
-
-        self.successors = [] #cited as article nodes
+        self.keywordList = []
+        self.references = []
+        
+        self.successors = []
         self.subTreePredecessors = []
-        self.predecessors = [] #keyword nodes
+        self.predecessors = []
         self.visited = False
+
+        
