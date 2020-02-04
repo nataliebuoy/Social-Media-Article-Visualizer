@@ -136,3 +136,5 @@ print("Search time: %s seconds" % (time.time() - startTime))
 
 print("Number of Facebook articles: ",len(searchResults))
 
+#Tested on dummy nodes only. Change nodeList variable to vary the dummy nodes used
+
