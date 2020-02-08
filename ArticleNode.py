@@ -4,7 +4,7 @@ class ArticleNode:
         self.articleID = aid
         self.keywordList = []
         self.references = []
-        
+        self.authorList = []
         self.successors = []
         self.subTreePredecessors = []
         self.predecessors = []
