@@ -26,6 +26,23 @@ def assignDummyReferences(nodeList):
         for i in range(numberOfReferences):
             node.references.append(random.randint(1,100))
 
+def assignDummyAuthors(nodeList):
+    authorList = ["Adams", "Jameson", "Smith", "Bernard", "Josiah", "Heaster", "Kadrick", "Fisher", "Cherry", "Howe", "Johns", "Carney", "Rollins", "Meyer", "Garza", "Gonzalez", "Bauer", "Jenkins", "Chase"]		
+    for node in nodeList:
+        numberOfAuthors = random.randint(1,4);
+        for i in range(numberOfAuthors):
+            node.authorList.append(random.choice(authorList))
+        node.authorList= list(set(node.authorList))
+       #print(node.authorList)
+
+def authorSearch(nodeList, authorToSearch):
+    articlesByAuthor = []
+    for node in nodeList:
+        for author in node.authorList: 
+            if author == authorToSearch:
+                articlesByAuthor.append(node.articleID)
+    return(articlesByAuthor)
+
 
 class multiwayTree:
     def __init__ (self):
@@ -122,6 +139,7 @@ startTime = time.time()
 nodeList = generateDummyNodes(1000000)
 assignDummyKeyWords(nodeList)
 assignDummyReferences(nodeList)
+assignDummyAuthors(nodeList)
 print("Node Generation Time: %s seconds" % (time.time() - startTime))
 #MultiwayTree Test code
 
@@ -135,6 +153,16 @@ searchResults = tree.keyWordSearch("Facebook")
 print("Search time: %s seconds" % (time.time() - startTime))
 
 print("Number of Facebook articles: ",len(searchResults))
+
+# Author Dummy Test 
+#authorToSearch = "Josiah"
+#print("The articles by the author \"", authorToSearch, "\" are: ", authorSearch(nodeList, authorToSearch), "\n")
+
+#print("Authors: ")
+#for node in nodeList:
+#   print("element ", count, ": ", node.authorList)
+#   count+=1
+
 
 #Tested on dummy nodes only. Change nodeList variable to vary the dummy nodes used
 
