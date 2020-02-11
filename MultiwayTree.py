@@ -9,26 +9,26 @@ from random import sample
 # Test case methods for dummy nodes
 
 
-def assignDummyKeyWords(nodeList,keywordList):   
-    for node in nodeList:
-        numberOfKeywords = random.randint(1,len(keywordList))
-        for i in range(numberOfKeywords):
-            node.keywordList.append(random.choice(keywordList))
-        node.keywordList= list(set(node.keywordList))
+def assignDummyKeyWords(node,keywordList):   
+    
+    numberOfKeywords = random.randint(1,len(keywordList))
+    for i in range(numberOfKeywords):
+        node.keywordList.append(random.choice(keywordList))
+    node.keywordList= list(set(node.keywordList))
 
-def assignDummyReferences(nodeList,maxReferences,n):
-    for node in nodeList:
-        numberOfReferences =  randrange(maxReferences)
-        for i in range(numberOfReferences):
-            node.references.append(random.randint(1,n))
+def assignDummyReferences(node,maxReferences,n):
+    numberOfReferences =  randrange(maxReferences)
+    for i in range(numberOfReferences):
+        node.references.append(random.randint(1,n))
 
 def generateDummyNodes(n,keywordList,maxReferences):
     nodeList = []
     for i in range(1,n+1):
+        print("Generating Node: ", i)
         newNode = ArticleNode(i)
         nodeList.append(newNode)
-    assignDummyKeyWords(nodeList,keywordList)
-    assignDummyReferences(nodeList,maxReferences,n)
+        assignDummyKeyWords(newNode,keywordList)
+        assignDummyReferences(newNode,maxReferences,n)
     return nodeList
     
 
@@ -45,6 +45,7 @@ class multiwayTree:
     #Store all the article nodes in node dictionary using Article Id's as keys
     def initializeNodeDictionary(self,nodeList):
         for node in nodeList:
+            print ("Initializing Node: ",node.articleID)
             self.nodeDictionary[node.articleID] = node
             for keyword in node.keywordList:
                 if (keyword not in self.keywords):
@@ -53,7 +54,7 @@ class multiwayTree:
                     self.nodeDictionary[keyword] = ArticleNode(-self.numberOfSubtrees)
                     self.nodeDictionary[keyword].name = keyword
                     self.nodeDictionary[keyword].predecessors = self.root
-                    self.root.successors = self.nodeDictionary[keyword]            
+                    self.root.successors.append(self.nodeDictionary[keyword])            
     def assignSubTrees(self):
         for i in range(1,len(self.nodeDictionary)-self.numberOfSubtrees):
             for keyword in self.nodeDictionary[i].keywordList:
@@ -110,28 +111,26 @@ class multiwayTree:
 #Initialize Parameters
 keywordList = ["Facebook","Reddit","Twitter","Instagram","Snapchat","TikTok"]
 searchList = sample(keywordList,3)
+numberOfNodes = 6000000
+maxReferencesPerArticle = 35
 
-# Dummy Nodes Test code
+# Generate Dummy Nodes
 startTime = time.time()
-nodeList = generateDummyNodes(1000000,keywordList,35)
+nodeList = generateDummyNodes(numberOfNodes,keywordList,maxReferencesPerArticle)
 print("Random Node Generation Time: %s seconds" % (time.time() - startTime))
 
-#MultiwayTree Test code
+#Initialize multiway Tree
 startTime = time.time()
 tree = multiwayTree()
 tree.initialize(nodeList)
 print("Tree Initializaiton time: %s seconds" % (time.time() - startTime))
 
-#Search Algorithm metrics
+#Conduct search and print metrics
 startTime = time.time()
 searchResults = tree.keyWordSearch(["Facebook","Twitter"])
 print("Search time: %s seconds" % (time.time() - startTime))
-
 print("SearchList: ",searchList)
 print("Number of articles :", len(searchResults))
-
 for keyword in searchList:
     print(keyword,": ", len(tree.nodeDictionary[keyword].successors))
-
-#Tested on dummy nodes only. Change nodeList variable to vary the dummy nodes used
 
