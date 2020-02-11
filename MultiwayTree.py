@@ -45,7 +45,6 @@ class multiwayTree:
     #Store all the article nodes in node dictionary using Article Id's as keys
     def initializeNodeDictionary(self,nodeList):
         for node in nodeList:
-            print ("Initializing Node: ",node.articleID)
             self.nodeDictionary[node.articleID] = node
             for keyword in node.keywordList:
                 if (keyword not in self.keywords):
@@ -63,8 +62,9 @@ class multiwayTree:
     def establishNodeRelationships(self):
         for i in range(1,len(self.nodeDictionary)-self.numberOfSubtrees):
             for reference in self.nodeDictionary[i].references:
-                self.nodeDictionary[i].successors.append(self.nodeDictionary[reference])
-                self.nodeDictionary[reference].predecessors.append(self.nodeDictionary[i])
+                if(reference <= (len(self.nodeDictionary)-self.numberOfSubtrees)):
+                    self.nodeDictionary[i].successors.append(self.nodeDictionary[reference])
+                    self.nodeDictionary[reference].predecessors.append(self.nodeDictionary[i])
     def initialize(self,nodeList):
         self.initializeNodeDictionary(nodeList)
         self.assignSubTrees()
@@ -81,10 +81,10 @@ class multiwayTree:
 
         count = 1
         print ("\n\nPredecessors:")
-        for i in range(1,len(tree.nodeDictionary)-tree.numberOfSubtrees):
+        for i in range(1,len(self.nodeDictionary)-self.numberOfSubtrees):
             print ("element ",count, ": ", end = '')
             count+=1
-            for predecessor in tree.nodeDictionary[i].predecessors:
+            for predecessor in self.nodeDictionary[i].predecessors:
                 print(predecessor.articleID,end = ' ')
             print()   
     def keyWordSearch(self,searchList):
@@ -106,31 +106,31 @@ class multiwayTree:
         return searchOutput
             
 
-## Test code 
+# ## Test code 
 
-#Initialize Parameters
-keywordList = ["Facebook","Reddit","Twitter","Instagram","Snapchat","TikTok"]
-searchList = sample(keywordList,3)
-numberOfNodes = 6000000
-maxReferencesPerArticle = 35
+# #Initialize Parameters
+# keywordList = ["Facebook","Reddit","Twitter","Instagram","Snapchat","TikTok"]
+# searchList = sample(keywordList,3)
+# numberOfNodes = 1000
+# maxReferencesPerArticle = 35
 
-# Generate Dummy Nodes
-startTime = time.time()
-nodeList = generateDummyNodes(numberOfNodes,keywordList,maxReferencesPerArticle)
-print("Random Node Generation Time: %s seconds" % (time.time() - startTime))
+# # Generate Dummy Nodes
+# startTime = time.time()
+# nodeList = generateDummyNodes(numberOfNodes,keywordList,maxReferencesPerArticle)
+# print("Random Node Generation Time: %s seconds" % (time.time() - startTime))
 
-#Initialize multiway Tree
-startTime = time.time()
-tree = multiwayTree()
-tree.initialize(nodeList)
-print("Tree Initializaiton time: %s seconds" % (time.time() - startTime))
+# #Initialize multiway Tree
+# startTime = time.time()
+# tree = multiwayTree()
+# tree.initialize(nodeList)
+# print("Tree Initializaiton time: %s seconds" % (time.time() - startTime))
 
-#Conduct search and print metrics
-startTime = time.time()
-searchResults = tree.keyWordSearch(["Facebook","Twitter"])
-print("Search time: %s seconds" % (time.time() - startTime))
-print("SearchList: ",searchList)
-print("Number of articles :", len(searchResults))
-for keyword in searchList:
-    print(keyword,": ", len(tree.nodeDictionary[keyword].successors))
+# #Conduct search and print metrics
+# startTime = time.time()
+# searchResults = tree.keyWordSearch(["Facebook","Twitter"])
+# print("Search time: %s seconds" % (time.time() - startTime))
+# print("SearchList: ",searchList)
+# print("Number of articles :", len(searchResults))
+# for keyword in searchList:
+#     print(keyword,": ", len(tree.nodeDictionary[keyword].successors))
 

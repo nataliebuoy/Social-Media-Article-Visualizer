@@ -12,7 +12,8 @@ class GetArticles():
         if self.articleList.get(aid):
             article = self.articleList.get(aid)
         else:
-            article = ArticleNode(aid, title)
+            article = ArticleNode(aid)
+            article.name = title
         return article
 
     def getAllArticles(self):
@@ -23,7 +24,7 @@ class GetArticles():
                 if line_count == 0:
                     line_count += 1
                 else:
-                    print(f'{row[0]}, {row[1]}')
+                    #print(f'{row[0]}, {row[1]}')
 
                     article = self.createArticleNode(row[0], row[1])
                     self.articleList[row[0]] = article
