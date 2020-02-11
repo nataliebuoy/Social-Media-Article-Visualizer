@@ -62,8 +62,9 @@ class multiwayTree:
     def establishNodeRelationships(self):
         for i in range(1,len(self.nodeDictionary)-self.numberOfSubtrees):
             for reference in self.nodeDictionary[i].references:
-                self.nodeDictionary[i].successors.append(self.nodeDictionary[reference])
-                self.nodeDictionary[reference].predecessors.append(self.nodeDictionary[i])
+                if(reference <= (len(self.nodeDictionary)-self.numberOfSubtrees)):
+                    self.nodeDictionary[i].successors.append(self.nodeDictionary[reference])
+                    self.nodeDictionary[reference].predecessors.append(self.nodeDictionary[i])
     def initialize(self,nodeList):
         self.initializeNodeDictionary(nodeList)
         self.assignSubTrees()

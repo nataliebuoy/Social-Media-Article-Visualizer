@@ -24,7 +24,7 @@ class GetArticles():
                 if line_count == 0:
                     line_count += 1
                 else:
-                    print(f'{row[0]}, {row[1]}')
+                    #print(f'{row[0]}, {row[1]}')
 
                     article = self.createArticleNode(row[0], row[1])
                     self.articleList[row[0]] = article
