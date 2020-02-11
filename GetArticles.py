@@ -12,7 +12,8 @@ class GetArticles():
         if self.articleList.get(aid):
             article = self.articleList.get(aid)
         else:
-            article = ArticleNode(aid, title)
+            article = ArticleNode(aid)
+            article.name = title
         return article
 
     def getAllArticles(self):
