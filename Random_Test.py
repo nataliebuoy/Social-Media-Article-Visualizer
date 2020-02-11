@@ -23,20 +23,30 @@ tree.initialize(nodeList)
 #Search parameters
 
 numberOfKeywords = random.randint(1,len(tree.keywords))
-numberOfTestSearches = 20
+numberOfTestSearches = 10000
 count = 0
-for i in range(1000):
+successfulSearches=[]
+for i in range(numberOfTestSearches):
     searchList = sample(tree.keywords,numberOfKeywords)
     searchResults = tree.keyWordSearch(searchList)
     startTime = time.time()
     tree.keyWordSearch(searchList)
     print("Search time: %s seconds" % (time.time() - startTime))
     print("SearchList: ",searchList)
-    print("Search Qualified rticlesA :", len(searchResults))
+    print("Search Qualified Articles :", len(searchResults))
     # print("Articles in keywords:-")
     # for keyword in searchList:
     #     print(keyword,": ", len(tree.nodeDictionary[keyword].successors))
-    if(len(searchResults)>0) : count+=1
+    if(len(searchResults)>0) : 
+        count+=1
+        successfulSearches.append(searchList)
     print()
     print()
-print("Successful Searches: ",count)
+print("Successful Searches: ",count,"/",numberOfTestSearches)
+categorizedArticles= 0
+for keyword in tree.keywords:
+    categorizedArticles+=len(tree.nodeDictionary[keyword].successors)
+
+print("Number of Categorized Articles = ",categorizedArticles)
+print("All keywords identified: \n", tree.keywords)
+print("Successful Searches: \n", successfulSearches)
