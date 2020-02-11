@@ -54,7 +54,7 @@ class multiwayTree:
                     self.nodeDictionary[keyword] = ArticleNode(-self.numberOfSubtrees)
                     self.nodeDictionary[keyword].name = keyword
                     self.nodeDictionary[keyword].predecessors = self.root
-                    self.root.successors = self.nodeDictionary[keyword]            
+                    self.root.successors.append(self.nodeDictionary[keyword])            
     def assignSubTrees(self):
         for i in range(1,len(self.nodeDictionary)-self.numberOfSubtrees):
             for keyword in self.nodeDictionary[i].keywordList:
