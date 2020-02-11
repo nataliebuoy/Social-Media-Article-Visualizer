@@ -4,29 +4,33 @@ import random
 from collections import deque
 import time
 from random import randrange
+from random import sample
 
 # Test case methods for dummy nodes
-def generateDummyNodes(n):
-    nodeList = []
-    for i in range(1,n+1):
-        newNode = ArticleNode(i)
-        nodeList.append(newNode)
-    return nodeList
 
-def assignDummyKeyWords(nodeList):
-    keywordList = ["Facebook","Reddit","Twitter","Instagram","Snapchat","TikTok"]
+
+def assignDummyKeyWords(nodeList,keywordList):   
     for node in nodeList:
         numberOfKeywords = random.randint(1,len(keywordList))
         for i in range(numberOfKeywords):
             node.keywordList.append(random.choice(keywordList))
         node.keywordList= list(set(node.keywordList))
 
-def assignDummyReferences(nodeList):
+def assignDummyReferences(nodeList,maxReferences,n):
     for node in nodeList:
-        numberOfReferences =  randrange(30)
+        numberOfReferences =  randrange(maxReferences)
         for i in range(numberOfReferences):
-            node.references.append(random.randint(1,1000000))
+            node.references.append(random.randint(1,n))
 
+def generateDummyNodes(n,keywordList,maxReferences):
+    nodeList = []
+    for i in range(1,n+1):
+        newNode = ArticleNode(i)
+        nodeList.append(newNode)
+    assignDummyKeyWords(nodeList,keywordList)
+    assignDummyReferences(nodeList,maxReferences,n)
+    return nodeList
+    
 
 class multiwayTree:
     def __init__ (self):
@@ -103,24 +107,31 @@ class multiwayTree:
 
 ## Test code 
 
+#Initialize Parameters
+keywordList = ["Facebook","Reddit","Twitter","Instagram","Snapchat","TikTok"]
+searchList = sample(keywordList,3)
+
 # Dummy Nodes Test code
 startTime = time.time()
-nodeList = generateDummyNodes(1000000)
-assignDummyKeyWords(nodeList)
-assignDummyReferences(nodeList)
-print("Node Generation Time: %s seconds" % (time.time() - startTime))
-#MultiwayTree Test code
+nodeList = generateDummyNodes(1000000,keywordList,35)
+print("Random Node Generation Time: %s seconds" % (time.time() - startTime))
 
+#MultiwayTree Test code
 startTime = time.time()
 tree = multiwayTree()
 tree.initialize(nodeList)
-print("Initializaiton time: %s seconds" % (time.time() - startTime))
+print("Tree Initializaiton time: %s seconds" % (time.time() - startTime))
 
+#Search Algorithm metrics
 startTime = time.time()
 searchResults = tree.keyWordSearch(["Facebook","Twitter"])
 print("Search time: %s seconds" % (time.time() - startTime))
 
+print("SearchList: ",searchList)
 print("Number of articles :", len(searchResults))
-print("Facebook: ",len(tree.nodeDictionary["Facebook"].successors),"Twitter: ",len(tree.nodeDictionary["Twitter"].successors))
+
+for keyword in searchList:
+    print(keyword,": ", len(tree.nodeDictionary[keyword].successors))
+
 #Tested on dummy nodes only. Change nodeList variable to vary the dummy nodes used
 
