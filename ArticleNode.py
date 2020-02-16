@@ -1,6 +1,6 @@
 class ArticleNode:
-    def __init__(self,aid):
-        self.name =""                   #name
+    def __init__(self,aid,name):
+        self.name = name                #name
         self.articleID = aid            #int: Article ID
         self.keywordList = []           #keywords: lowercase keywords, stripped of whitespaces
         self.references = []            #int: articleID's of the articles referenced

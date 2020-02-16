@@ -14,11 +14,16 @@ class UpdateKeywords:
         pid = -1  # article ID starts at 1
         with open(wordFile, 'r', encoding="utf8") as file:
             for line in file:
+                if counter != 0:
+                    self.addKeywordToTrie(root, line, pid, kDict)
+                counter += 1
                 pid += 1
-                for word in line.split():
-                    if counter != 0:
-                        self.addKeywordToTrie(root, word, pid, kDict)
-                    counter += 1
+
+                #pid += 1
+                #for word in line.split():
+                    #if counter != 0:
+                        #self.addKeywordToTrie(root, word, pid, kDict)
+                    #counter += 1
 
     #Trie structure allows for keyword phrases
     def addKeywordToTrie(self, root, phrase, pid, kDict):
@@ -73,17 +78,19 @@ class UpdateArticles:
         return self.aDict
 
 
-    def addKeywordToDictionary(self, aid, kDict, node):
+    def addKeywordToDictionary(self, aid, kDict, node, key):
         currentArticle = self.aDict[aid]
         if node.phraseID not in currentArticle.keywordDict:
-            currentArticle.keywordDict[node.phraseID] = node.phrase
+            currentArticle.keywordDict[node.phraseID] = key
             self.aDict[aid] = currentArticle
             keyword = kDict[node.phraseID]
             keyword.referencedByList.append(currentArticle)
             kDict[node.phraseID] = keyword
 
-    def findKeywordInAbstract(self, root, aid, title, abstract, kDict):
+    def findKeywordInArticle(self, root, aid, title, abstract, kDict):
         node = root
+        key = ""
+
         #iterate through title
         if title != None:
             for word in title.split():
@@ -92,27 +99,55 @@ class UpdateArticles:
                 # check if word exists in phrase
                 for child in node.children:
                     childIndex += 1
-                    if word == child.phrase:
+                    if word.lower() == child.phrase.lower():
                         flag = True
                         break
                 #if word exists in phrase:
                 if flag:
+                    key += word
                     node = node.children[childIndex]
                     if node.word_finished:
-
-                        #self.addArticleToDictionary(aid, title)
-                        self.addKeywordToDictionary(aid, kDict, node)
-
+                        self.addKeywordToDictionary(aid, kDict, node, key)
+                        key = ""
                         node = root
+                    else:
+                        key += " "
                     continue
                 # if word does not exist in phrase
                 else:
                     if node == root:
+                        key = ""
                         continue  # i += 1
                     else:
                         node = root
+                        key = ""
+                        
+                        #CASE B
+                        flag2 = False
+                        childIndex = -1
+                        for child in node.children:
+                            childIndex += 1
+                            if word.lower() == child.phrase.lower():
+                                flag2 = True
+                                break
+                        #if word exists in phrase:
+                        if flag2:
+                            key += word
+                            node = node.children[childIndex]
+                            if node.word_finished:
+                                self.addKeywordToDictionary(aid, kDict, node, key)
+                                key = ""
+                                node = root
+                            else:
+                                key += " "
+                            continue
+                        # if word does not exist in phrase
+                        else:
+                            key = ""
+                            continue  # i += 1
 
         #iterate through abstract
+        key = ""
         if abstract != None:
             for word in abstract.split():
                 flag = False
@@ -120,25 +155,52 @@ class UpdateArticles:
                 # check if word exists in phrase
                 for child in node.children:
                     childIndex += 1
-                    if word == child.phrase:
+                    if word.lower() == child.phrase.lower():
                         flag = True
                         break
                 #if word exists in phrase:
                 if flag:
+                    key += word
                     node = node.children[childIndex]
                     if node.word_finished:
-
-                        #self.addArticleToDictionary(aid, title)
-                        self.addKeywordToDictionary(aid, kDict, node)
-
+                        self.addKeywordToDictionary(aid, kDict, node, key)
+                        key = ""
                         node = root
+                    else:
+                        key += " "
                     continue
                 # if word does not exist in phrase
                 else:
                     if node == root:
-                        continue
+                        key = ""
+                        continue  # i += 1
                     else:
                         node = root
+                        key = ""
+                        
+                        #CASE B
+                        flag2 = False
+                        childIndex = -1
+                        for child in node.children:
+                            childIndex += 1
+                            if word.lower() == child.phrase.lower():
+                                flag2 = True
+                                break
+                        #if word exists in phrase:
+                        if flag2:
+                            key += word
+                            node = node.children[childIndex]
+                            if node.word_finished:
+                                self.addKeywordToDictionary(aid, kDict, node, key)
+                                key = ""
+                                node = root
+                            else:
+                                key += " "
+                            continue
+                        # if word does not exist in phrase
+                        else:
+                            key = ""
+                            continue  # i += 1
 
         return self.aDict
 
@@ -155,7 +217,7 @@ class UpdateArticles:
             for aid in articleDict:
                 article = articleDict[aid]
                 id = int(article.articleID)
-                title = str(article.articleTitle)
+                title = str(article.name)
                 writeArticles.writerow([id,title])
 
     def writeArticleKewords(self, articleDict):
@@ -170,7 +232,7 @@ class UpdateArticles:
                 for keyID in article.keywordDict:
                     keyword = article.keywordDict[keyID]
                     id = int(article.articleID)
-                    title = str(article.articleTitle)
+                    title = str(article.name)
                     kid = int(keyID)
                     writeArticles.writerow([id,title,kid,keyword])
 
@@ -183,7 +245,7 @@ class UpdateArticles:
                 article = articleDict[aid]
                 for cid in article.cited:
                     id = int(article.articleID)
-                    title = str(article.articleTitle)
+                    title = str(article.name)
                     c_id = int(cid)
                     writeArticles.writerow([id,title,cid])
      

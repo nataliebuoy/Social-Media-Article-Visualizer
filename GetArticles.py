@@ -12,7 +12,7 @@ class GetArticles():
         if self.articleList.get(aid):
             article = self.articleList.get(aid)
         else:
-            article = ArticleNode(aid)
+            article = ArticleNode(aid, title)
             article.name = title
         return article
 
