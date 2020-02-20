@@ -9,7 +9,7 @@ from random import sample
 #Initialize and preprocess data from GetArticles.py
 print("Processing Articles:")
 generator = GetArticles()
-articles = generator.getArticles();
+articles = generator.getArticles()
 nodeList = list(articles.values())
 for node in nodeList:
     node.articleID = int(node.articleID)
@@ -47,7 +47,7 @@ categorizedArticles= 0
 for keyword in tree.keywords:
     categorizedArticles+=len(tree.nodeDictionary[keyword].successors)
 
-print("Number of Categorized Articles = ",categorizedArticles)
+print("Number of Categorized Articles = ",categorizedArticles,"/",len(nodeList))
 print("All keywords identified: \n", tree.keywords)
 print("Successful Searches: \n", successfulSearches)
 
