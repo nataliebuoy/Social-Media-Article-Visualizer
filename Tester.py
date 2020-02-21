@@ -117,6 +117,24 @@ class Tester:
             #print(list(intersection(words,keywordList)))
         print ("Total Articles hit",count)
 
+    def dummnyNodeSearchTest(self,numberOfSearchTerms):
 
-Test_gen = Tester(10)
-Test_gen.keywordExistanceCheck()
+        # Generate Dummy Nodes
+        startTime = time.time()
+        nodeList = self.generateDummyNodes()
+        print("Random Node Generation Time: %s seconds" % (time.time() - startTime))
+
+        #Initialize multiway Tree
+        startTime = time.time()
+        tree = multiwayTree()
+        tree.initialize(nodeList)
+        print("Tree Initializaiton time: %s seconds" % (time.time() - startTime))
+
+        #Conduct search and print metrics
+        searchList = sample(self.keywordList,numberOfSearchTerms)
+        startTime = time.time()
+        searchResults = tree.keyWordSearch(searchList)
+        print("Search time: %s seconds" % (time.time() - startTime))
+        print("SearchList: ",searchList)
+        print("Number of articles :", len(searchResults))
+
