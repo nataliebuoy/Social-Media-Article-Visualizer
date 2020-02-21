@@ -17,18 +17,15 @@ for index in dataFrame.index:
         sub_category_list.append(dataFrame['Subcategory'][index])
         count +=1
     else:
-        print (prev,": ",count)
         new_dict[prev] = sub_category_list
         sub_category_list.clear()
         sub_category_list.append(dataFrame['Subcategory'][index])
 
     prev = current   
 new_dict[prev] = sub_category_list
-
-
 df = pd.DataFrame(new_dict)
 set1 = set(list(dataFrame['Category']))
 set2 = set(list(df.columns))
 intersection = set1.intersection(set2)
 difference = set1.difference(set2)
-print (difference)
+print (df.columns)
