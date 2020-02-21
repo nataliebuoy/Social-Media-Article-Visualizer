@@ -5,32 +5,7 @@ from collections import deque
 import time
 from random import randrange
 from random import sample
-
-# Test case methods for dummy nodes
-
-
-def assignDummyKeyWords(node,keywordList):   
-    
-    numberOfKeywords = random.randint(1,len(keywordList))
-    for i in range(numberOfKeywords):
-        node.keywordList.append(random.choice(keywordList))
-    node.keywordList= list(set(node.keywordList))
-
-def assignDummyReferences(node,maxReferences,n):
-    numberOfReferences =  randrange(maxReferences)
-    for i in range(numberOfReferences):
-        node.references.append(random.randint(1,n))
-
-def generateDummyNodes(n,keywordList,maxReferences):
-    nodeList = []
-    for i in range(1,n+1):
-        print("Generating Node: ", i)
-        newNode = ArticleNode(i,"a")
-        nodeList.append(newNode)
-        assignDummyKeyWords(newNode,keywordList)
-        assignDummyReferences(newNode,maxReferences,n)
-    return nodeList
-    
+import pandas as pd
 
 class multiwayTree:
     def __init__ (self):
@@ -39,8 +14,7 @@ class multiwayTree:
             0:self.root
         }
         self.numberOfSubtrees = 0
-        self.keywords = []
-        
+        self.keywords = []       
     #Store all the article nodes in node dictionary using Article Id's as keys
     def initializeNodeDictionary(self,nodeList):
         for node in nodeList:

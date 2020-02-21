@@ -3,6 +3,7 @@ class ArticleNode:
         self.name = name                #name
         self.articleID = aid            #int: Article ID
         self.keywordList = []           #keywords: lowercase keywords, stripped of whitespaces
+        
         self.references = []            #int: articleID's of the articles referenced
         self.keywordDict = {}
         self.cited = []
