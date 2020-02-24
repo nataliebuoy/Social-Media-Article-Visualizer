@@ -34,8 +34,8 @@ def generateDummyNodes(n,keywordList,maxReferences):
 
 class multiwayTree:
     def __init__ (self):
-        self.root = ArticleNode(0)
-        self.root.name = "Root"
+        self.root = ArticleNode(0,"Root")
+        #self.root.name = "Root"
         self.nodeDictionary = {
             0:self.root
         }
@@ -50,8 +50,8 @@ class multiwayTree:
                 if (keyword not in self.keywords):
                     self.numberOfSubtrees = self.numberOfSubtrees + 1
                     self.keywords.append(keyword)
-                    self.nodeDictionary[keyword] = ArticleNode(-self.numberOfSubtrees)
-                    self.nodeDictionary[keyword].name = keyword
+                    self.nodeDictionary[keyword] = ArticleNode(-self.numberOfSubtrees, keyword)
+                    #self.nodeDictionary[keyword].name = keyword
                     self.nodeDictionary[keyword].predecessors = self.root
                     self.root.successors.append(self.nodeDictionary[keyword])            
     def assignSubTrees(self):

@@ -30,7 +30,7 @@ class PythonApplication2:
         postgreSQL_select_Query = "SELECT * FROM public.cites ORDER BY article_id ASC, cites_article_id ASC"
         cursor.execute(postgreSQL_select_Query)
         #allCites = cursor.fetchall()
-        allCites = cursor.fetchmany(4000000)
+        allCites = cursor.fetchmany(5000000)
   
         currentCiteID = 0
 

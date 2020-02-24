@@ -42,7 +42,7 @@ class UpdateKeywords:
                     break
             # We did not find it so add a new child
             if not found_in_child:
-                new_node = PhraseNode(word[i], pid)
+                new_node = PhraseNode(word[i].lower().strip(), pid)
                 node.children.append(new_node)
                 # And then point node to the new child
                 node = new_node
@@ -53,7 +53,7 @@ class UpdateKeywords:
         node.word_finished = True
 
         #add new KeywordNode to keywordDict
-        newKeywordNode = KeywordNode(pid,phrase)
+        newKeywordNode = KeywordNode(pid,phrase.lower().strip())
         kDict[pid] = newKeywordNode
     #end addKeywordToTrie
 
@@ -94,6 +94,7 @@ class UpdateArticles:
         #iterate through title
         if title != None:
             for word in title.split():
+                word = word.lower().strip()
                 flag = False
                 childIndex = -1
                 # check if word exists in phrase
@@ -150,6 +151,7 @@ class UpdateArticles:
         key = ""
         if abstract != None:
             for word in abstract.split():
+                word = word.lower().strip()
                 flag = False
                 childIndex = -1
                 # check if word exists in phrase
@@ -251,16 +253,12 @@ class UpdateArticles:
      
     #for testing
     def writeKeywords(self, keywordDict):
-        f = open("keywords.txt", "w+", encoding="utf8")
-        f.write(str(len(keywordDict)) + "\n")  # total number of keywords
-        f.write("'articleCount','keyword','articleID'\n")
-
-        for keyID in keywordDict:
-            keywordNode = keywordDict[keyID]
-            articles = ""
-            count = len(keywordNode.referencedByList)
-            for articleNode in keywordNode.referencedByList:
-                articles += str(articleNode.articleID) + ","
-            f.write("'%d','%s','%s'\n" % (count, keywordNode.keyword, articles))
-        f.close()
+        with open('keywords.csv', mode='w', encoding="utf8") as f:
+            writeArticles = csv.writer(f, delimiter=",", quotechar='"', quoting=csv.QUOTE_ALL, lineterminator = '\n')
+            
+            writeArticles.writerow(["article_count","keyword"])
+            for keyID in keywordDict:
+                keywordNode = keywordDict[keyID]
+                count = len(keywordNode.referencedByList)
+                writeArticles.writerow([count,keywordNode.keyword])
     # end writeKeywords
