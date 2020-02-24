@@ -59,8 +59,7 @@ class Tester:
             node.keywordList = list(node.keywordDict.values())
 
         #Initialize DataStructure
-        tree = multiwayTree()
-        tree.initialize(nodeList)
+        tree = multiwayTree(nodeList)
 
         #Search parameters
         numberOfTestSearches = numberOfSearches
@@ -117,24 +116,28 @@ class Tester:
             #print(list(intersection(words,keywordList)))
         print ("Total Articles hit",count)
 
-    def dummnyNodeSearchTest(self,numberOfSearchTerms):
+    def dummyNodeSearchTest(self,numberOfSearchTerms):
 
         # Generate Dummy Nodes
         startTime = time.time()
         nodeList = self.generateDummyNodes()
-        print("Random Node Generation Time: %s seconds" % (time.time() - startTime))
 
         #Initialize multiway Tree
-        startTime = time.time()
-        tree = multiwayTree()
-        tree.initialize(nodeList)
-        print("Tree Initializaiton time: %s seconds" % (time.time() - startTime))
+        tree = multiwayTree(nodeList)
 
         #Conduct search and print metrics
+        numberOfSearchTerms = random.randint(1,len(self.keywordList))
         searchList = sample(self.keywordList,numberOfSearchTerms)
         startTime = time.time()
         searchResults = tree.keyWordSearch(searchList)
+        
+        # print ("Tree Stats")
+        # for keyword in tree.keywords:
+        #     print(keyword,": ",len(tree.nodeDictionary[keyword].successors))       
         print("Search time: %s seconds" % (time.time() - startTime))
-        print("SearchList: ",searchList)
         print("Number of articles :", len(searchResults))
+        print("Number of keywords searched", numberOfSearchTerms)
+        
+tester = Tester(10000)
+tester.dummyNodeSearchTest(60)
 
