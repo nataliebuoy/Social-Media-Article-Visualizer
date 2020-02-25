@@ -72,7 +72,7 @@ class Tester:
             #numberOfKeywords = random.randint(1,len(tree.keywords))
             numberOfKeywords = 3
             #searchList = sample(tree.keywords,numberOfKeywords)
-            #searchList = ['social','media','social media','social-media']
+            searchList = ['social','media','social media','social-media']
             searchResults = tree.keyWordSearch(searchList)
             startTime = time.time()
             tree.keyWordSearch(searchList)
