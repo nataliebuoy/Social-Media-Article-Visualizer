@@ -53,22 +53,26 @@ class Tester:
         generator = GetArticles()
         articles = generator.getArticles()
         nodeList = list(articles.values())
+        count = 0
         for node in nodeList:
             node.articleID = int(node.articleID)
             node.references = [int(article) for article in node.cited]
             node.keywordList = list(node.keywordDict.values())
 
+
         #Initialize DataStructure
         tree = multiwayTree(nodeList)
 
         #Search parameters
-        numberOfTestSearches = numberOfSearches
+        numberOfTestSearches = 3
         count = 0
         successfulSearches=[]
         for i in range(numberOfTestSearches):
             
-            numberOfKeywords = random.randint(1,len(tree.keywords))
-            searchList = sample(tree.keywords,numberOfKeywords)
+            #numberOfKeywords = random.randint(1,len(tree.keywords))
+            numberOfKeywords = 3
+            #searchList = sample(tree.keywords,numberOfKeywords)
+            searchList = ['social','media','social media','social-media']
             searchResults = tree.keyWordSearch(searchList)
             startTime = time.time()
             tree.keyWordSearch(searchList)
@@ -81,27 +85,27 @@ class Tester:
             if(len(searchResults)>0) : 
                 count+=1
                 successfulSearches.append(searchList)
-            print()
-            print()
+            print (searchResults)
 
         categorizedArticles= 0
         for keyword in tree.keywords:
             categorizedArticles+=len(tree.nodeDictionary[keyword].successors)
-
-        print("All keywords identified: \n", tree.keywords)
+        unnecessary = tree.subcategories + tree.categories
+        identifiedKeywords = set(tree.keywords) - set(unnecessary)
+        #print("All keywords identified: \n", set(identifiedKeywords))
         print("Number of Categorized Articles = ",categorizedArticles,"/",len(nodeList))
         print("Number of Successful Searches: ", count)
+
 
     def keywordExistanceCheck(self):
         def intersection (list1,list2):
             return list(set(list1) & set(list2))
         #Convert keywords in adhoc_wordlist.csv into lowercase list of keywords
-        
-        
-
         # access abstracts of each of the downloaded .json files and check for keywords
         path = '/Users/AgNI/Documents/Capstone/2018-10-25'
         count = 0 
+        dead_abstracts = 0
+        search = ['social','media','social-media', 'social media']
         for filename in glob.glob(os.path.join(path, '*.json')): #only process .JSON files in folder.      
             with open(filename, encoding='utf-8', mode='r') as currentFile:
                 data=currentFile.read().replace('\n', '')
@@ -109,13 +113,18 @@ class Tester:
                 words = words.split()
                 words = [x.strip() for x in words]
                 words = [x.lower() for x in words]
-                words = list(set(words))
-                match = len(intersection(words,self.keywordList))
-                if match>1 :
+                words = set(words)
+                match = len(intersection(words,set(search)))
+                if len(words) == 0:
+                    dead_abstracts+=1
+                if match>0 :
                     count+=1
+        print(count)
             #print(list(intersection(words,keywordList)))
-        print ("Total Articles hit",count)
-
+    def keywrodCSVCheck(self):
+        df = pd.read_csv("keywords.csv")
+        print(df['article_count'].sum())
+        
     def dummyNodeSearchTest(self,numberOfSearchTerms):
 
         # Generate Dummy Nodes
@@ -139,5 +148,4 @@ class Tester:
         print("Number of keywords searched", numberOfSearchTerms)
         
 tester = Tester(10000)
-tester.dummyNodeSearchTest(60)
-
+tester.realNodeSearchTest(100)
