@@ -13,7 +13,10 @@ class multiwayTree:
         
         self.nodeDictionary = {
             0:self.root
-        }     
+        } 
+        self.authorDictionary = {
+
+        }    
         self.numberOfSubtrees = 0       
         self.categoryDict,self.categories,self.subcategories = self.createCategoryDict()
         self.keywords = self.categories + self.subcategories
@@ -83,7 +86,15 @@ class multiwayTree:
         #Create Category and subCategory Nodes
 
         for node in self.nodeList:          
-            self.nodeDictionary[node.articleID] = node           
+            self.nodeDictionary[node.articleID] = node 
+
+            #Authors Initialized in self.authorDictionary
+            node.authorList = node.authorList.lower()
+            authors = node.authorList
+            # no need to check if author already exists or not because dict[a] is created if not already present.
+            for author in authors:
+                self.nodeDictionary[author].append(node)
+        
             for keyword in node.keywordList:
 
                 if (keyword not in self.keywords):
