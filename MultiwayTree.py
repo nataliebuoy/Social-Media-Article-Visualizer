@@ -25,6 +25,9 @@ class multiwayTree:
         self.assignSubTrees()
         self.establishNodeRelationships()
 
+    def intersection(self,list1, list2):
+        return set(list1).intersection(set(list2))
+
     def createCategoryDict(self):
         dataFrame = pd.read_csv("scimago_categories_then_areas.csv")
         dataFrame = dataFrame.drop(columns= ['Code'])
@@ -138,4 +141,22 @@ class multiwayTree:
         for successor in searchTree.successors:
             if(set(searchList).issubset(set(successor.keywordList))):
                 searchOutput.append(successor.articleID)
-        return searchOutput
+        
+        categoryCountDict={}
+        searchArticlesInCurrentCategory=[]
+        for category in self.categories:
+            searchArticlesInCurrentCategory = self.intersection(self.nodeDictionary[category].successors,searchOutput)
+            categoryCountDict[category] = list(searchArticlesInCurrentCategory)
+            searchArticlesInCurrentCategory = []
+        return categoryCountDict
+
+    def subCategorizer(self,aidList):
+        subcategory_dict={}
+        searchArticlesInCurrentCategory = []
+        for subcategory in self.subcategories:
+            searchArticlesInCurrentCategory = self.intersection(self.nodeDictionary[subcategory].successors,aidList)
+            subcategory_dict[subcategory] = list(searchArticlesInCurrentCategory)
+            searchArticlesInCurrentCategory = []
+        return subcategory_dict
+
+    
