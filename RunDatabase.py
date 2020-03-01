@@ -10,6 +10,7 @@ class PythonApplication2:
     obj = UpdateKeywords()
     keywordDict = obj.getKeywordDict(root)
     
+    #articleDict contains every article and all of its relevant information
     articleDict = {}
     obj2 = UpdateArticles(articleDict)
 
@@ -34,29 +35,28 @@ class PythonApplication2:
   
         currentCiteID = 0
 
-        #display articles in list
-  
+        #iterates through cited articles
         for row in artTemp:
             artCites = []
             while(1):
-                print(currentCiteID)
-                print(allCites[currentCiteID][0])
+                #print(currentCiteID)
+                #print(allCites[currentCiteID][0])
                 if allCites[currentCiteID][0] < row[0]:
                     currentCiteID += 1
                 if allCites[currentCiteID][0] == row[0]:
-                    print(allCites[currentCiteID][1])
+                    #print(allCites[currentCiteID][1])
                     artCites.append(allCites[currentCiteID][1])
 
+                    #update article dictionary with its list of cited
                     articleDict = obj2.updateCited(allCites[currentCiteID][0], row[6], allCites[currentCiteID][1])
 
                     currentCiteID += 1
                 else:
                     break
 
-            #TODO create article objects
             print("\nArticle ID =", row[0])
-            print("Title =", row[6])
-            print("Abstract =", row[3])
+            #print("Title =", row[6])
+            #print("Abstract =", row[3])
 
             """print("Cites =")
             for i in artCites:
@@ -65,8 +65,13 @@ class PythonApplication2:
             if row[0] == 22:
                 print("break")
 
+            #--------------------UPDATE ARTICLE DICTIONARY WITH QUERIED INFORMATION--------------------
+            #instantiate with article id and title
             articleDict = obj2.addArticleToDictionary(row[0], row[6])
+            #update article's dictionary with keywords
             articleDict = obj2.findKeywordInArticle(root, row[0], row[6], row[3], keywordDict)
+            
+            #TODO: update author, journal, subject area, subject category
 
     except (Exception, psycopg2.Error) as error :
         print ("Error while fetching  data from PostgreSQL", error)

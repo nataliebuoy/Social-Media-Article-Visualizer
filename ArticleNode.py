@@ -4,6 +4,8 @@ class ArticleNode:
         self.articleID = aid            #int: Article ID
         self.keywordList = []           #keywords: lowercase keywords, stripped of whitespaces
         
+        #TODO: add authors, etc. 
+
         self.references = []            #int: articleID's of the articles referenced
         self.keywordDict = {}
         self.cited = []
@@ -12,6 +14,7 @@ class ArticleNode:
         self.subTreePredecessors = []   #Root nodes of the respective keywords
         self.predecessors = []          #Article nodes of articles citing current article
         self.visited = False            # BFS checking variable
+
     def getInfo(self):
         print ("Name: ",self.name)
         print ("KeyWords: ",list(self.keywordDict.values()))           #keywords: lowercase keywords, stripped of whitespaces
