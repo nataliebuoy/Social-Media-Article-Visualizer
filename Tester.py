@@ -139,13 +139,15 @@ class Tester:
         searchList = sample(self.keywordList,numberOfSearchTerms)
         startTime = time.time()
         searchResults = tree.keyWordSearch(searchList)
-        
+        subcategoies = tree.subCategorizer([1,2,3,4,5,6,7,8,8,9])
+        for key in subcategoies:
+            print(key,":",subcategoies[key])
         # print ("Tree Stats")
         # for keyword in tree.keywords:
         #     print(keyword,": ",len(tree.nodeDictionary[keyword].successors))       
-        print("Search time: %s seconds" % (time.time() - startTime))
-        print("Number of articles :", len(searchResults))
-        print("Number of keywords searched", numberOfSearchTerms)
+        return searchResults
         
 tester = Tester(10000)
-tester.realNodeSearchTest(100)
+output = tester.dummyNodeSearchTest(5)
+# for key in output:
+#     print(key,":",output[key])

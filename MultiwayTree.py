@@ -13,7 +13,10 @@ class multiwayTree:
         
         self.nodeDictionary = {
             0:self.root
-        }     
+        } 
+        self.authorDictionary = {
+
+        }    
         self.numberOfSubtrees = 0       
         self.categoryDict,self.categories,self.subcategories = self.createCategoryDict()
         self.keywords = self.categories + self.subcategories
@@ -24,6 +27,9 @@ class multiwayTree:
         self.initializeNodeDictionary()
         self.assignSubTrees()
         self.establishNodeRelationships()
+
+    def intersection(self,list1, list2):
+        return set(list1).intersection(set(list2))
 
     def createCategoryDict(self):
         dataFrame = pd.read_csv("scimago_categories_then_areas.csv")
@@ -80,7 +86,15 @@ class multiwayTree:
         #Create Category and subCategory Nodes
 
         for node in self.nodeList:          
-            self.nodeDictionary[node.articleID] = node           
+            self.nodeDictionary[node.articleID] = node 
+
+            #Authors Initialized in self.authorDictionary
+            node.authorList = node.authorList.lower()
+            authors = node.authorList
+            # no need to check if author already exists or not because dict[a] is created if not already present.
+            for author in authors:
+                self.nodeDictionary[author].append(node)
+        
             for keyword in node.keywordList:
 
                 if (keyword not in self.keywords):
@@ -138,4 +152,22 @@ class multiwayTree:
         for successor in searchTree.successors:
             if(set(searchList).issubset(set(successor.keywordList))):
                 searchOutput.append(successor.articleID)
-        return searchOutput
+        
+        categoryCountDict={}
+        searchArticlesInCurrentCategory=[]
+        for category in self.categories:
+            searchArticlesInCurrentCategory = self.intersection(self.nodeDictionary[category].successors,searchOutput)
+            categoryCountDict[category] = list(searchArticlesInCurrentCategory)
+            searchArticlesInCurrentCategory = []
+        return categoryCountDict
+
+    def subCategorizer(self,aidList):
+        subcategory_dict={}
+        searchArticlesInCurrentCategory = []
+        for subcategory in self.subcategories:
+            searchArticlesInCurrentCategory = self.intersection(self.nodeDictionary[subcategory].successors,aidList)
+            subcategory_dict[subcategory] = list(searchArticlesInCurrentCategory)
+            searchArticlesInCurrentCategory = []
+        return subcategory_dict
+
+    
