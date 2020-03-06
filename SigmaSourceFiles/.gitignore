@@ -1,0 +1,6 @@
+../node_modules/yauzl
+build/*
+*.tgz
+*.log
+*.swp
+.DS_Store
