@@ -1,8 +1,8 @@
-
 import psycopg2
 from Update import UpdateKeywords
 from Update import UpdateArticles
 from PhraseNode import PhraseNode
+#from MultiwayTree import multiwayTree
 
 class PythonApplication2:
     root = PhraseNode('*', -1)
@@ -22,56 +22,87 @@ class PythonApplication2:
 									    database="stephen")    
         cursor = connection.cursor() 
 
-        postgreSQL_select_Query = "SELECT * FROM public.sma ORDER BY id ASC"
+        #--------------------------------------QUERIES--------------------------------------
+
+        #query article njoin cites
+        postgreSQL_select_Query = """SELECT SMA.id, SMA.abstract, SMA.title, C.cites_article_id
+                                       FROM public.sma SMA, public.cites C
+                                       WHERE SMA.id = C.article_id
+                                            AND (SMA.abstract ~* '(^| |\()(social|media|(social.*media)|(media.*social))($| |[\.\?!:;,\)])'
+                                                OR SMA.title ~* '(^| |\()(social|media|(social.*media)|(media.*social))($| |[\.\?!:;,\)])')
+                                       ORDER BY SMA.id ASC LIMIT 1000"""
         cursor.execute(postgreSQL_select_Query)
-        #use fetchall() to get all articles, use fetchmany(x) to get x number of articles"
-        #artTemp = cursor.fetchall()
-        artTemp = cursor.fetchmany(1000000)
+        #articleTemp = cursor.fetchall()
+        articleTemp = cursor.fetchmany(1000)
 
-        postgreSQL_select_Query = "SELECT * FROM public.cites ORDER BY article_id ASC, cites_article_id ASC"
+        #query article njoin cited_by
+        postgreSQL_select_Query = """SELECT SMA.id as article_id, C.cited_by_id
+                                        FROM public.sma SMA, public.cited_by C
+                                        WHERE SMA.id = C.article_id
+	                                        AND (SMA.abstract ~* '(^| |\()(social|media|(social.*media)|(media.*social))($| |[\.\?!:;,\)])'
+	                                            OR SMA.title ~* '(^| |\()(social|media|(social.*media)|(media.*social))($| |[\.\?!:;,\)])')
+                                        ORDER BY SMA.id ASC LIMIT 1000 """
         cursor.execute(postgreSQL_select_Query)
-        #allCites = cursor.fetchall()
-        allCites = cursor.fetchmany(4000000)
-  
-        currentCiteID = 0
+        #articleTemp = cursor.fetchall()
+        citedByTemp = cursor.fetchmany(1000)
 
-        #iterates through cited articles
-        for row in artTemp:
-            artCites = []
-            while(1):
-                #print(currentCiteID)
-                #print(allCites[currentCiteID][0])
-                if allCites[currentCiteID][0] < row[0]:
-                    currentCiteID += 1
-                if allCites[currentCiteID][0] == row[0]:
-                    #print(allCites[currentCiteID][1])
-                    artCites.append(allCites[currentCiteID][1])
+        #query authors
+        postgreSQL_select_Query = """SELECT * FROM public.article_authors
+                                     ORDER BY article_id ASC, author_name ASC LIMIT 10000"""
+        cursor.execute(postgreSQL_select_Query)
+        #authorTemp = cursor.fetchall()
+        authorTemp = cursor.fetchmany(1000)
 
-                    #update article dictionary with its list of cited
-                    articleDict = obj2.updateCited(allCites[currentCiteID][0], row[6], allCites[currentCiteID][1])
+        #query journals
+        postgreSQL_select_Query = """SELECT * FROM public.journals
+                                     ORDER BY id ASC LIMIT 10000"""
+        cursor.execute(postgreSQL_select_Query)
+        #journalTemp = cursor.fetchall()
+        journalTemp = cursor.fetchmany(1000)
 
-                    currentCiteID += 1
-                else:
-                    break
+        #--------------------UPDATE ARTICLE DICTIONARY WITH QUERIED INFORMATION--------------------
+        for row in articleTemp:
+            article_id = row[0]
+            abstract = row[1]
+            title = row[2]
+            cites_article_id = row[3]
 
-            print("\nArticle ID =", row[0])
-            #print("Title =", row[6])
-            #print("Abstract =", row[3])
+            #print("art_id: ", article_id)
+            #if article_id == 72:
+                #print("break")
 
-            """print("Cites =")
-            for i in artCites:
-                print(i)"""
-
-            if row[0] == 22:
-                print("break")
-
-            #--------------------UPDATE ARTICLE DICTIONARY WITH QUERIED INFORMATION--------------------
             #instantiate with article id and title
-            articleDict = obj2.addArticleToDictionary(row[0], row[6])
-            #update article's dictionary with keywords
-            articleDict = obj2.findKeywordInArticle(root, row[0], row[6], row[3], keywordDict)
+            articleDict = obj2.addArticleToDictionary(article_id, title, True)
+            #update article's cited list
+            articleDict = obj2.updateCited(article_id, "temp_cited_title", cites_article_id)
+            #update article's keyword dictionary
+            articleDict = obj2.findKeywordInArticle(root, article_id, title, abstract, keywordDict)
+        
+        #update article's cited_by list
+        for row in citedByTemp:
+            article_id = row[0]
+            cited_by_id = row[1]
+
+            articleDict = obj2.updateCitedBy(article_id, "temp_cited_by_title", cited_by_id)
             
-            #TODO: update author, journal, subject area, subject category
+        #update article's author list
+        for row in authorTemp:
+            article_id = row[0]
+            author_name = row[1]
+
+            #print("article_id_auth: ", article_id)
+            #print("auth name: ", author_name)
+
+            articleDict = obj2.updateAuthor(article_id, author_name)
+
+        #update article's journals
+        for row in journalTemp:
+            article_id = row[0]
+            journal_name = row[1]
+            subject_area = row[2]
+            subject_category = row[3]
+            
+            articleDict = obj2.updateJournal(article_id, journal_name, subject_area, subject_category)
 
     except (Exception, psycopg2.Error) as error :
         print ("Error while fetching  data from PostgreSQL", error)
@@ -81,9 +112,20 @@ class PythonApplication2:
         if(connection):
             cursor.close()
             connection.close()
+            
+            nodeList = []
+            for aid in articleDict:
+                nodeList.append(articleDict[aid])
+
+            #tree = MultiWayTree(nodeList)
+
             obj2.writeArticles(articleDict)
             obj2.writeArticleKewords(articleDict)
             obj2.writeArticleCited(articleDict)
+            obj2.writeArticleCitedBy(articleDict)
+            obj2.writeAuthor(articleDict)
+            obj2.writeJournal(articleDict)
             obj2.writeKeywords(keywordDict)
+            obj2.writeKeywords2(keywordDict)
             print(len(articleDict))
             print("Closing connection to database")
