@@ -87,7 +87,13 @@ class UpdateArticles:
 
     def updateCitedBy(self, aid, title, citedByID):
         self.aDict = self.addArticleToDictionary(citedByID, title, False)
-        self.aDict[aid].citedBy.append(citedByID)
+        
+        #if aid == 17326:
+        testNode = ArticleNode(0,"")
+        testNode = self.aDict[aid]
+
+        self.aDict[aid].citedBy.append(int(citedByID))
+
         return self.aDict
 
     def updateAuthor(self, aid, author_name):
@@ -120,15 +126,10 @@ class UpdateArticles:
         node = root
         key = ""
 
-        containsSocialMedia = False
-
         #iterate through title
         if title != None:
             for word in title.split():
                 word = word.lower().strip()
-
-                if word == "social" or word == "media" or word == "socialmedia" or word == "social-media" or word == "social media":
-                    containsSocialMedia = True
 
                 flag = False
                 childIndex = -1
@@ -188,9 +189,6 @@ class UpdateArticles:
             for word in abstract.split():
                 word = word.lower().strip()
 
-                if word == "social" or word == "media" or word == "socialmedia" or word == "social-media" or word == "social media":
-                    containsSocialMedia = True
-
                 flag = False
                 childIndex = -1
                 # check if word exists in phrase
@@ -242,9 +240,6 @@ class UpdateArticles:
                         else:
                             key = ""
                             continue  # i += 1
-
-        if not containsSocialMedia:
-            del self.aDict[aid]
 
         return self.aDict
     

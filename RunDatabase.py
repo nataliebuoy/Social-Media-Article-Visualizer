@@ -23,25 +23,34 @@ class PythonApplication2:
         cursor = connection.cursor() 
 
         #--------------------------------------QUERIES--------------------------------------
-
-        #query article njoin cites
-        postgreSQL_select_Query = """SELECT SMA.id, SMA.abstract, SMA.title, C.cites_article_id
-                                       FROM public.sma SMA, public.cites C
-                                       WHERE SMA.id = C.article_id
-                                            AND (SMA.abstract ~* '(^| |\()(social|media|(social.*media)|(media.*social))($| |[\.\?!:;,\)])'
-                                                OR SMA.title ~* '(^| |\()(social|media|(social.*media)|(media.*social))($| |[\.\?!:;,\)])')
-                                       ORDER BY SMA.id ASC LIMIT 1000"""
+        #query all articles containing [social media, socialmedia, social-media]
+        postgreSQL_select_Query = """SELECT SMA.id, SMA.abstract, SMA.title
+                                     FROM public.sma SMA
+                                     WHERE (SMA.abstract ~* '(^| |[\(\[@#])(socialmedia|social-media|social media)($| |[\.\?!:;,\)\]])'
+                                              OR SMA.title ~* '(^| |[\(\[@#])(socialmedia|social-media|social media)($| |[\.\?!:;,\)\]])')
+                                     ORDER BY SMA.id ASC LIMIT 1000"""
         cursor.execute(postgreSQL_select_Query)
         #articleTemp = cursor.fetchall()
         articleTemp = cursor.fetchmany(1000)
 
-        #query article njoin cited_by
-        postgreSQL_select_Query = """SELECT SMA.id as article_id, C.cited_by_id
+        #query cites
+        postgreSQL_select_Query = """SELECT SMA.id, C.cites_article_id
+                                       FROM public.sma SMA, public.cites C
+                                       WHERE SMA.id = C.article_id
+                                            AND (SMA.abstract ~* '(^| |[\(\[@#])(socialmedia|social-media|social media)($| |[\.\?!:;,\)\]])'
+                                                OR SMA.title ~* '(^| |[\(\[@#])(socialmedia|social-media|social media)($| |[\.\?!:;,\)\]])')
+                                       ORDER BY SMA.id ASC LIMIT 1000"""
+        cursor.execute(postgreSQL_select_Query)
+        #articleTemp = cursor.fetchall()
+        citesTemp = cursor.fetchmany(1000)
+
+        #query cited_by
+        postgreSQL_select_Query = """SELECT SMA.id, C.cited_by_id
                                         FROM public.sma SMA, public.cited_by C
                                         WHERE SMA.id = C.article_id
-	                                        AND (SMA.abstract ~* '(^| |\()(social|media|(social.*media)|(media.*social))($| |[\.\?!:;,\)])'
-	                                            OR SMA.title ~* '(^| |\()(social|media|(social.*media)|(media.*social))($| |[\.\?!:;,\)])')
-                                        ORDER BY SMA.id ASC LIMIT 1000 """
+	                                        AND (SMA.abstract ~* '(^| |[\(\[@#])(socialmedia|social-media|social media)($| |[\.\?!:;,\)\]])'
+	                                            OR SMA.title ~* '(^| |[\(\[@#])(socialmedia|social-media|social media)($| |[\.\?!:;,\)\]])')
+                                        ORDER BY SMA.id ASC LIMIT 1000"""
         cursor.execute(postgreSQL_select_Query)
         #articleTemp = cursor.fetchall()
         citedByTemp = cursor.fetchmany(1000)
@@ -65,23 +74,40 @@ class PythonApplication2:
             article_id = row[0]
             abstract = row[1]
             title = row[2]
-            cites_article_id = row[3]
 
             #print("art_id: ", article_id)
-            #if article_id == 72:
-                #print("break")
+            #print("art_cited_id: ", cites_article_id)
+            #if article_id == 19803:
+            #    print("break")
 
             #instantiate with article id and title
             articleDict = obj2.addArticleToDictionary(article_id, title, True)
-            #update article's cited list
-            articleDict = obj2.updateCited(article_id, "temp_cited_title", cites_article_id)
             #update article's keyword dictionary
             articleDict = obj2.findKeywordInArticle(root, article_id, title, abstract, keywordDict)
         
+        #update article's cites list
+        for row in citesTemp:
+            article_id = row[0]
+            cites_id = row[1]
+
+            print("art_id: ", article_id)
+            print("cites_id: ", cites_id)
+
+            #if article_id == 17326 and cites_id == 17327:
+            #    print("break")
+
+            articleDict = obj2.updateCited(article_id, "temp_cited_title", cites_id)
+            
         #update article's cited_by list
         for row in citedByTemp:
             article_id = row[0]
             cited_by_id = row[1]
+
+            print("art_id: ", article_id)
+            print("cited_by_id: ", cited_by_id)
+
+            if article_id == 17326 and cited_by_id == 17327:
+                print("break")
 
             articleDict = obj2.updateCitedBy(article_id, "temp_cited_by_title", cited_by_id)
             
@@ -93,6 +119,9 @@ class PythonApplication2:
             #print("article_id_auth: ", article_id)
             #print("auth name: ", author_name)
 
+            #if article_id == 19803 and cites_article_id == 215752:
+            #    print("break")
+            
             articleDict = obj2.updateAuthor(article_id, author_name)
 
         #update article's journals
