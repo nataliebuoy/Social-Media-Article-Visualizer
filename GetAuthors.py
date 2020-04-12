@@ -13,7 +13,6 @@ class GetAuthors():
            
             readArticles = csv.reader(csv_file, delimiter=',')
             
-            # line_count = 0
             for row in readArticles:
                 author = row[1].lower()
                 articles = row[0].lower()
@@ -31,8 +30,6 @@ class GetAuthors():
             #     print("Articles are: ")
             #     print(self.authorDict[author])
             #     print("")
-
-           # print(f'Processed {line_count} lines.')
 
 
     # Returns article IDs of articles written by author (matches full author name or by last name)
