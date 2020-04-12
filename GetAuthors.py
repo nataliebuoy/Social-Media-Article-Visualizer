@@ -32,34 +32,35 @@ class GetAuthors():
             #     print("")
 
 
-    # Returns article IDs of articles written by author (matches full author name or by last name)
+        # Returns article IDs of articles written by author (matches full author name or by last name)
     def authorSearch(self, authorName, authorDict):
 
         authorName = authorName.lower()
         lastName = authorName.split(" ")[-1]  
         firstName = authorName.split(" ")[0]
-        found = 0
         
         # Exact full name match
         if authorName in self.authorDict:
            print("Articles by: " + authorName)
            print(authorDict.get(authorName))
-           found = 1
+           return(authorDict.get(authorName))
+
         else:
             for authorName in self.authorDict:    
                 # Middle initial ignored, first and last name match           
                 if authorName.endswith(lastName) and authorName.startswith(firstName):
                     print("Articles by: " + authorName)
                     print(authorDict.get(authorName))
-                    found = 1
+                    return(authorDict.get(authorName))
+                    
                 # When only the last name is searched, return articles by authors with the last name
                 elif authorName.endswith(lastName) and firstName == lastName:
                     print("Articles by name: " + authorName)
                     print(authorDict.get(authorName))
-                    found = 1
-
-        if(found == 0):
-            print("No articles by this author!")
+                    return(authorDict.get(authorName))
+                    
+        print("No articles by this author!")
+        return None
 
     def getAuthors(self):
         self.getAuthor()
