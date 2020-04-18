@@ -1,12 +1,13 @@
 from ArticleNode import ArticleNode
 from PhraseNode import PhraseNode
 from KeywordNode import KeywordNode
+import psycopg2
 import csv
 
 
 class UpdateKeywords:
     def __init__(self):
-        print("hi")
+        print("Updating")
 
     def addKeywords(self, root, wordFile, kDict):
         counter = 0
@@ -70,20 +71,42 @@ class UpdateArticles:
         print("")
 
     #function to create article with id and title
-    def addArticleToDictionary(self, aid, title):
+    def addArticleToDictionary(self, aid, title, contains_social_media):
         if aid not in self.aDict:
-            newArticle = ArticleNode(aid, title)
+            newArticle = ArticleNode(int(aid), title)
+            newArticle.contains_social_media = contains_social_media
             self.aDict[aid] = newArticle
-
         return self.aDict
 
     #function to update cited
     def updateCited(self, aid, title, citedID):
-        self.addArticleToDictionary(aid, title)
+        self.aDict = self.addArticleToDictionary(citedID, title, False)
         self.aDict[aid].cited.append(citedID)
+        self.aDict[aid].references.append(int(citedID))
         return self.aDict
 
-    #TODO: add functions to update article, journal, subject area, category
+    def updateCitedBy(self, aid, title, citedByID):
+        self.aDict = self.addArticleToDictionary(citedByID, title, False)
+        
+        #if aid == 17326:
+        testNode = ArticleNode(0,"")
+        testNode = self.aDict[aid]
+
+        self.aDict[aid].citedBy.append(int(citedByID))
+
+        return self.aDict
+
+    def updateAuthor(self, aid, author_name):
+        if aid in self.aDict:
+            self.aDict[aid].authorList.append(author_name)
+        return self.aDict
+
+    def updateJournal(self, aid, journal_name, subject_area, subject_category):
+        if aid in self.aDict:
+            self.aDict[aid].journal = journal_name
+            self.aDict[aid].subject_area = subject_area
+            self.aDict[aid].subject_category = subject_category
+        return self.aDict
 
     #------------------------KEYWORD-RELATED FUNCTIONS------------------------
 
@@ -96,6 +119,7 @@ class UpdateArticles:
             keyword = kDict[node.phraseID]
             keyword.referencedByList.append(currentArticle)
             kDict[node.phraseID] = keyword
+            currentArticle.keywordList.append(key)
 
     #function parses through abstract/title of every article and stores found keywords in respective article node
     def findKeywordInArticle(self, root, aid, title, abstract, kDict):
@@ -106,6 +130,7 @@ class UpdateArticles:
         if title != None:
             for word in title.split():
                 word = word.lower().strip()
+
                 flag = False
                 childIndex = -1
                 # check if word exists in phrase
@@ -163,6 +188,7 @@ class UpdateArticles:
         if abstract != None:
             for word in abstract.split():
                 word = word.lower().strip()
+
                 flag = False
                 childIndex = -1
                 # check if word exists in phrase
@@ -216,7 +242,6 @@ class UpdateArticles:
                             continue  # i += 1
 
         return self.aDict
-
     
 
     def writeArticles(self, articleDict):
@@ -250,16 +275,45 @@ class UpdateArticles:
         with open('articleCited.csv', mode='w', encoding="utf8") as f:
             writeArticles = csv.writer(f, delimiter=",", quotechar='"', quoting=csv.QUOTE_ALL, lineterminator = '\n')
 
-            writeArticles.writerow(["article_ID","article_title","cited_id"])
+            writeArticles.writerow(["article_ID","cited_id"])
             for aid in articleDict:
                 article = articleDict[aid]
                 for cid in article.cited:
                     id = int(article.articleID)
-                    title = str(article.name)
                     c_id = int(cid)
-                    writeArticles.writerow([id,title,cid])
-     
-    #for testing
+                    writeArticles.writerow([id,cid])
+
+    def writeArticleCitedBy(self, articleDict):
+        with open('articleCitedBy.csv', mode='w', encoding="utf8") as f:
+            writeArticles = csv.writer(f, delimiter=",", quotechar='"', quoting=csv.QUOTE_ALL, lineterminator = '\n')
+
+            writeArticles.writerow(["article_ID","cited_by_id"])
+            for aid in articleDict:
+                article = articleDict[aid]
+                for cid in article.citedBy:
+                    id = int(article.articleID)
+                    c_id = int(cid)
+                    writeArticles.writerow([id,cid])
+
+    def writeAuthor(self, articleDict):
+        with open('articleAuthor.csv', mode='w', encoding="utf8") as f:
+            writeArticles = csv.writer(f, delimiter=",", quotechar='"', quoting=csv.QUOTE_ALL, lineterminator = '\n')
+
+            writeArticles.writerow(["article_ID","author_name"])
+            for aid in articleDict:
+                article = articleDict[aid]
+                for author_name in article.authorList:
+                    writeArticles.writerow([aid,author_name])
+
+    def writeJournal(self, articleDict):
+        with open('articleJournal.csv', mode='w', encoding="utf8") as f:
+            writeArticles = csv.writer(f, delimiter=",", quotechar='"', quoting=csv.QUOTE_ALL, lineterminator = '\n')
+
+            writeArticles.writerow(["article_ID","journal", "subject_area", "subject_category"])
+            for aid in articleDict:
+                article = articleDict[aid]
+                writeArticles.writerow([aid, article.journal, article.subject_area, article.subject_category])
+
     def writeKeywords(self, keywordDict):
         with open('keywords.csv', mode='w', encoding="utf8") as f:
             writeArticles = csv.writer(f, delimiter=",", quotechar='"', quoting=csv.QUOTE_ALL, lineterminator = '\n')
@@ -269,7 +323,17 @@ class UpdateArticles:
                 keywordNode = keywordDict[keyID]
                 count = len(keywordNode.referencedByList)
                 writeArticles.writerow([count,keywordNode.keyword])
-    # end writeKeywords
-    
-    #TODO: write authors, journals, etc. to .csv files
-    #how the files are split is up to judgement
+
+    def writeKeywords2(self, keywordDict):
+        f = open("keywords.txt", "w+", encoding="utf8")
+        f.write(str(len(keywordDict)) + "\n")  # total number of keywords
+        f.write("'articleCount','keyword','articleID'\n")
+
+        for keyID in keywordDict:
+            keywordNode = keywordDict[keyID]
+            articles = ""
+            count = len(keywordNode.referencedByList)
+            for articleNode in keywordNode.referencedByList:
+                articles += str(articleNode.articleID) + ","
+            f.write("'%d','%s','%s'\n" % (count, keywordNode.keyword, articles))
+        f.close()
