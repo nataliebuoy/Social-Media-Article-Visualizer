@@ -1,10 +1,4 @@
 from ArticleNode import ArticleNode
-from DummyNode import DummyNode
-import random
-from collections import deque
-import time
-from random import randrange
-from random import sample
 import pandas as pd
 
 class multiwayTree:
@@ -89,7 +83,8 @@ class multiwayTree:
             self.nodeDictionary[node.articleID] = node 
 
             #Authors Initialized in self.authorDictionary
-            node.authorList = node.authorList.lower()
+            converted_list = [x.lower() for x in node.authorList]
+            node.authorList = converted_list
             authors = node.authorList
             # no need to check if author already exists or not because dict[a] is created if not already present.
             for author in authors:
