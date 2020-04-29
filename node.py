@@ -1,13 +1,14 @@
 from json import JSONEncoder
 import random
 class node(JSONEncoder):
-    def __init__(self, ident, name, nodeSize):
-        self.id = "n" + str(ident)
-        self.label = name
-        self.x = random.randint(-10000, 10000)
-        self.y = random.randint(-10000, 10000)
+    def __init__(self, ident, nodeSize):
+        self.id = str(ident)
+        self.label = ident
+        self.x = random.randint(-10, 10)
+        self.y = random.randint(-10, 10)
         self.size = nodeSize
         self.color = "#FFFF00"
+        self.count = nodeSize
 
 class nodeEncoder(JSONEncoder):
     def default(self, o):

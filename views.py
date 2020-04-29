@@ -82,21 +82,20 @@ def keywordsearch():
     res = db2.getIdsFromKeyword(kw)
     results = db2.getSubAreas(res)
     print(results)
-    graph = tester.generateDummyGraph(results)
+    #graph = tester.generateDummyGraph(results, kw)
     return render_template('GuiTest.html')
     #return render_template(
     #    'keywordsearch.html',
     #   title='Keyword Search',
     #    year=datetime.now().year,
     #   kw=kw,
-    #    results=results
+    #   results=results
     #)
 @app.route('/cat/<results><area>', methods=['GET', 'POST'])
 def cat(results, area):
     db2 = RunDB()
     res = db2.getCategory(results, area)
     print(res)
-
 
     return render_template(
         'keywordsearch.html',
