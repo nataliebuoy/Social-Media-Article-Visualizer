@@ -1,60 +1,25 @@
 <html>
-  <head>
-    <title>Social Media Visualizer</title>
-    <script src="./build/sigma.min.js"></script>
-    <style>
-      html { height:100%;}
-      body {height: 100%;}
-      #sigma-container { width:100%; height:100%; background-color:#E1E1E1}
-    </style>
-  </head>
-  <body>
-    <div id='sigma-container'></div>
-    <script>
-     // Initialise sigma:
-var s = new sigma(
-  {
-    renderer: {
-      container: document.getElementById('sigma-container'),
-      type: 'canvas'
-    },
-    settings: {
-     minEdgeSize: 0.1,
-     maxEdgeSize: 2,
-     minNodeSize: 1,
-     maxNodeSize: 8,
-    }
+<head>
+<style type="text/css">
+  #container {
+    max-width: 2000px;
+    height: 2000px;
+    margin: auto;
   }
-);
-
-//import dictionary from
-     var cateDict = new Object();
-// Create a graph object
-var graph = {
-  nodes: [],
-  edges: []
-
-};
-for(i = 0; cateDict[i].subCategories; i++)
-  graph.nodes.push({
-    id: i
-    Label: cateDict[i].Category,
-    x: math.random(),
-    y: Math.random(),
-    size: cateDict[i].subCategories.length
+</style>
+</head>
+<body>
+<div id="container"></div>
+<script src="build/sigma.min.js"></script>
+<script src="static/scripts/sigma.parsers.json.js"></script>
+<script>
+  sigma.parsers.json('testjson.json', {
+    container: 'graph-container',
+    settings: {
+      defaultNodeColor: '#ec5148'
+    }
   });
-for(i = 1; cateDict[i].subCategories; i++)
-  graph.edges.push({
-      source: graph.nodes[i],
-      target: graph.nodes[0],
 
-     });
-
-
-// Load the graph in sigma
-s.graph.read(graph);
-// Ask sigma to draw it
-s.refresh();
-    </script>
-  </body>
+</script>
+</body>
 </html>

@@ -1,0 +1,86 @@
+{
+  "nodes": [
+    {
+      "id": "twitter",
+      "label": "Twitter",
+      "x": 0,
+      "y": 0,
+      "size": 12
+    },
+    {
+      "id": "n1",
+      "label": "animal science and zoology",
+      "x": 3,
+      "y": 1,
+      "size": 2
+    },
+    {
+      "id": "n2",
+      "label": "plant science",
+      "x": 1,
+      "y": 3,
+      "size": 2
+    },
+    {
+      "id": "n3",
+      "label": "history",
+      "x": 4,
+      "y": 3,
+      "size": 2
+    },
+    {
+      "id": "n4",
+      "label": "Law: Sub = 2",
+      "x": -1,
+      "y": -3,
+      "size": 2,
+      "subcategories": 2
+    },
+    {
+      "id": "n5",
+      "label": "medical terminology",
+      "x": -2,
+      "y": -4,
+      "size": 2
+    },
+    {
+      "id": "n6",
+      "label": "optometry",
+      "x": -6,
+      "y": -3,
+      "size": 2
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "source": "n1",
+      "target": "twitter"
+    },
+    {
+      "id": "e2",
+      "source": "n2",
+      "target": "twitter"
+    },
+    {
+      "id": "e3",
+      "source": "n3",
+      "target": "twitter"
+    },
+    {
+      "id": "e4",
+      "source": "n4",
+      "target": "twitter"
+    },
+    {
+      "id": "e5",
+      "source": "n5",
+      "target": "twitter"
+    },
+    {
+      "id": "e6",
+      "source": "n6",
+      "target": "twitter"
+    }
+  ]
+}

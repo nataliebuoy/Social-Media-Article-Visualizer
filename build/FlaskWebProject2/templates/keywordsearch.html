@@ -1,0 +1,19 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+    <h2>{{ title }} - {{ kw }}</h2>
+    {% for area in results %}
+        <article class="media content-section">
+            <div class="media-body">
+                <h2><a class="article-title" href="{{url_for('cat', results=results, area=area)}}">{{ area }}: {{(results[area]|length)}}</a></h2>
+                <p>{{ (results[area]).length }}</a></p>
+            </div>
+        </article>
+    {% endfor %}
+
+
+
+
+
+{% endblock %}
