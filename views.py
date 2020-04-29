@@ -8,8 +8,9 @@ from datetime import datetime
 from flask import render_template, flash, json, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
-from wtforms import StringField
-
+from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
+from RunDatabase import RunDB
+from Tester import tester
 
 from flask import Flask
 
@@ -49,12 +50,60 @@ class Article(db.Model):
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     """Renders the home page."""
-    form = KeywordForm()
+    kw = None
+    if request.method == 'POST':
+        try:
+            kw = request.form['kw']
+            return render_template(
+            'keywordsearch.html',
+            title='Keyword Search',
+            year=datetime.now().year,
+            message=kw)
+        except:
+            kw = request.form['author']
+            return render_template(
+                'index.html',
+                title='Home Page',
+                year=datetime.now().year,
+                kw=kw)
+
     return render_template(
         'index.html',
         title='Home Page',
+        year=datetime.now().year
+    )
+
+@app.route('/keywordsearch', methods=['GET', 'POST'])
+def keywordsearch():
+    """Renders the keyword page."""
+
+    db2 = RunDB()
+    kw=request.form['kw']
+    res = db2.getIdsFromKeyword(kw)
+    results = db2.getSubAreas(res)
+    print(results)
+    graph = tester.generateDummyGraph(results)
+    return render_template('GuiTest.html')
+    return render_template(
+        'keywordsearch.html',
+       title='Keyword Search',
         year=datetime.now().year,
-        form = form
+       kw=kw,
+        results=results
+    )
+@app.route('/cat/<results><area>', methods=['GET', 'POST'])
+def cat(results, area):
+    db2 = RunDB()
+    res = db2.getCategory(results, area)
+    print(res)
+
+
+    return render_template(
+        'keywordsearch.html',
+        title='Keyword Search',
+        year=datetime.now().year,
+        kw=area,
+        results=res
     )
 
 

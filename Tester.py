@@ -1,6 +1,6 @@
 import random
 import time
-import json, requests
+import json
 import os
 import glob
 import pandas as pd
@@ -9,7 +9,7 @@ from random import randrange
 from ArticleNode import ArticleNode
 from GetArticles import GetArticles
 from MultiwayTree import multiwayTree
-from RunDatabase import PythonApplication2
+from RunDatabase import RunDB
 from node import node, nodeEncoder
 from edge import edge
 
@@ -17,13 +17,13 @@ class Tester:
     def __init__(self, n):
         self.numberOfNodes = n
 
-        keywords = pd.read_csv("adhoc_wordlist.csv")
-        df = pd.DataFrame(keywords)
-        keywordList = df[["KEYWORDS"]].values.tolist()
-        keywordList = [j[0] for j in keywordList]
-        keywordList = [x.lower() for x in keywordList]
-        keywordList = [x.strip() for x in keywordList]
-        self.keywordList = keywordList
+        #keywords = pd.read_csv("adhoc_wordlist.csv")
+        #df = pd.DataFrame(keywords)
+        #keywordList = df[["KEYWORDS"]].values.tolist()
+        #keywordList = [j[0] for j in keywordList]
+        #keywordList = [x.lower() for x in keywordList]
+        #keywordList = [x.strip() for x in keywordList]
+        #self.keywordList = keywordList
 
         self.maxReferencesPerNode = 35
 
@@ -154,7 +154,7 @@ class Tester:
         return searchResults
 
     def testDatababse(self, keyword):
-        apps = PythonApplication2
+        apps = RunDB
         list = apps.getIdsFromKeyword(keyword)
         return list
 

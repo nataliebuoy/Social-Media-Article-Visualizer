@@ -5,17 +5,17 @@
 <div class="row">
     <div class="col-md-4">
         <h2>Keyword search</h2>
-        <form method="POST" action="">
+        <form method="POST" action="/keywordsearch">
             <input type="text" id="kw" name="kw" />
+            <p><input class="btn btn-primary" type="submit" value="Search" /></p>
         </form>
-        <p> form.submit(<a class="btn btn-default")</p>
     </div>
     <div class="col-md-4">
-        <h2>Author Search</h2>
-        <form2>
+        <h2>Author search</h2>
+        <form method="POST" action="/home">
             <input type="text" id="author" name="author" />
-        </form2>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Search Authors &raquo;</a></p>
+            <p><input class="btn btn-primary" type="submit" value="Search" /></p>
+        </form>
     </div>
 
 </div>
@@ -28,14 +28,11 @@
 </div>
 -->
 
-<div id="wrapper">
-    <div id="ball" class="border">
-        <div class="blue ball"> </div>
-    </div>
-    <canvas id="myCanvas" class="line"></canvas>
-    <div id="ball1" class="border">
-        <div class="green ball"> </div>
-    </div>
+<div class="jumbotron">
+    <h1>
+        {{kw}}
+    </h1>
+    
 </div>
 
 
