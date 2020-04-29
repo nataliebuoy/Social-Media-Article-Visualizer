@@ -84,13 +84,13 @@ def keywordsearch():
     print(results)
     graph = tester.generateDummyGraph(results)
     return render_template('GuiTest.html')
-    return render_template(
-        'keywordsearch.html',
-       title='Keyword Search',
-        year=datetime.now().year,
-       kw=kw,
-        results=results
-    )
+    #return render_template(
+    #    'keywordsearch.html',
+    #   title='Keyword Search',
+    #    year=datetime.now().year,
+    #   kw=kw,
+    #    results=results
+    #)
 @app.route('/cat/<results><area>', methods=['GET', 'POST'])
 def cat(results, area):
     db2 = RunDB()
