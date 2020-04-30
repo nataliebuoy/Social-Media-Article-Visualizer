@@ -2,6 +2,7 @@
 Routes and views for the flask application.
 """
 
+import sys
 import os
 from collections import OrderedDict
 from datetime import datetime
@@ -14,6 +15,7 @@ from Tester import tester
 
 from flask import Flask
 
+sys.path.append(os.getcwd())
 
 app = Flask(__name__)
 app.static_folder = 'static'

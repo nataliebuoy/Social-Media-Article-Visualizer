@@ -47,7 +47,7 @@ class RunDB:
                 print ("Error while fetching  data from PostgreSQL", error)
 
         
-            print("total count: ", i)
+            #print("total count: ", i)
             return keywordList
 
     def getIdsFromAuthor(self, author):
