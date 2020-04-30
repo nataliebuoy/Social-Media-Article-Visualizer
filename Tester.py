@@ -153,34 +153,10 @@ class Tester:
         #   print(keyword,": ",len(tree.nodeDictionary[keyword].successors))
         return searchResults
 
-    def testDatababse(self, keyword):
+    def testDatabase(self, keyword):
         apps = RunDB
         list = apps.getIdsFromKeyword(keyword)
         return list
-
-    def generateDummyGraph(self, searchResult, kw):
-        dummyThiccGraph = {'nodes': [], 'edges': []}
-        nodeList = []
-        edgelist = []
-
-        print("graphGenerator: " + str(searchResult))
-        for x in searchResult:
-            print(searchResult[x])
-            testNode = node(str(x),len(searchResult[x]))
-            nodeList.append(testNode)
-        nodObj = node(kw, len(nodeList)*10)
-        nodeList.insert(0,nodObj)
-        for x in searchResult:
-            testEdge = edge(str(x), kw)
-            edgelist.append(testEdge)
-
-        dummyThiccGraph['nodes'] = [node.__dict__ for node in nodeList]
-        dummyThiccGraph['edges'] = [edge.__dict__ for edge in edgelist]
-        output = dummyThiccGraph
-        print(dummyThiccGraph['nodes'])
-        with open(os.path.join('static', 'testjson.json'), 'w') as outfile:
-            outfile.write(json.dumps(output, indent=4))
-        return output
 
 
 

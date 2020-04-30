@@ -8,6 +8,8 @@
 <link href="{{url_for('static', filename='content/bootstrap.min.css')}}" rel="stylesheet" />
 <link href="{{url_for('static', filename='content/material-kit.css')}}" rel="stylesheet"/>
 <link href="{{url_for('static', filename='content/demo.css')}}" rel="stylesheet"/>
+<script src="{{url_for('static', filename='scripts/sigma.plugins.tooltips.js')}}" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.js"></script>">
 <style>
   #network-graph {
     top: 0;
@@ -16,20 +18,180 @@
     right: 0;
     position: absolute;
   }
+  .sigma-tooltip {
+      max-width: 240px;
+      max-height: 280px;
+      background-color: rgb(249, 247, 237);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      border-radius: 6px;
+    }
+
+    .sigma-tooltip-header {
+      font-variant: small-caps;
+      font-size: 120%;
+      color: #437356;
+      border-bottom: 1px solid #aac789;
+      padding: 10px;
+    }
+
+    .sigma-tooltip-body {
+      padding: 10px;
+    }
+
+    .sigma-tooltip-body th {
+      color: #999;
+      text-align: left;
+    }
+
+    .sigma-tooltip-footer {
+      padding: 10px;
+      border-top: 1px solid #aac789;
+    }
+
+    .sigma-tooltip > .arrow {
+      border-width: 10px;
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+    }
+
+    .sigma-tooltip.top {
+      margin-top: -12px;
+    }
+    .sigma-tooltip.top > .arrow {
+      left: 50%;
+      bottom: -10px;
+      margin-left: -10px;
+      border-top-color: rgb(249, 247, 237);
+      border-bottom-width: 0;
+    }
+
+    .sigma-tooltip.bottom {
+      margin-top: 12px;
+    }
+    .sigma-tooltip.bottom > .arrow {
+      left: 50%;
+      top: -10px;
+      margin-left: -10px;
+      border-bottom-color: rgb(249, 247, 237);
+      border-top-width: 0;
+    }
+
+    .sigma-tooltip.left {
+      margin-left: -12px;
+    }
+    .sigma-tooltip.left > .arrow {
+      top: 50%;
+      right: -10px;
+      margin-top: -10px;
+      border-left-color: rgb(249, 247, 237);
+      border-right-width: 0;
+    }
+
+    .sigma-tooltip.right {
+      margin-left: 12px;
+    }
+    .sigma-tooltip.right > .arrow {
+      top: 50%;
+      left: -10px;
+      margin-top: -10px;
+      border-right-color: rgb(249, 247, 237);
+      border-left-width: 0;
+    }
 </style>
 <!-- Scripts -->
-<div style="background-color: #969790;" id="network-graph"></div>
+<div style="background-color: #0d0d0d;" id="network-graph"></div>
 <script src="{{url_for('static', filename='scripts/sigma.require.js')}}" type="text/javascript"></script>
 <script src="{{url_for('static', filename='scripts/sigma.layout.forceAtlas2.min.js')}}" type="text/javascript"></script>
 <script src="{{url_for('static', filename='scripts/sigma.parsers.json.js')}}" type="text/javascript"></script>
 <script>
+  //sigma.settings.nodesPowRatio = 1;
+  //sigma.settings.autoRescale = false;
 
+  s = new sigma({
+  });
   sigma.parsers.json('static/testjson.json', {
     container: 'network-graph',
+    renderer: {
+      container: document.getElementById('network-graph'),
+      type: 'webgl'
+    },
     settings: {
-      defaultNodeColor: '#76ff83'
-    }
+      defaultNodeColor: '#76ff83',
+      minNodeSize: 1,
+      maxNodeSize: 8,
+      labelColor: "node"
+    },
+
+  },
+    function(s) {
+    s.startForceAtlas2()
   });
+  s.cameras[0].goTo({ x: 0, y: 0, angle: 0, ratio: 0.5 });
+
+
+// Tooltip setup
+var config = {
+  node: [{
+    show: 'hovers',
+    hide: 'hovers',
+    cssClass: 'sigma-tooltip',
+    position: 'top',
+    //autoadjust: true,
+    template:
+      '<div class="arrow"></div>' +
+      '<div class="sigma-tooltip-header">{{"Hello"}}</div>' +
+      '<div class="sigma-tooltip-body">' +
+      '  <table>' +
+      '    <tr><th>Name</th> <td>{{"Hello"}}</td></tr>' +
+      '    <tr><th>Gender</th> <td>{{"Hello"}}</td></tr>' +
+      '    <tr><th>Age</th> <td>{{"Hello"}}</td></tr>' +
+      '    <tr><th>City</th> <td>{{"Hello"}}</td></tr>' +
+      '  </table>' +
+      '</div>' +
+      '<div class="sigma-tooltip-footer">Number of connections: {{"Hello"}} </div>',
+    renderer: function(node, template) {
+      // The function context is s.graph
+      node.degree = this.degree(node.id);
+      // Returns an HTML string:
+      return Mustache.render(template, node);
+    }
+  }, {
+    show: 'overNode',
+    cssClass: 'sigma-tooltip',
+    position: 'right',
+    template:
+      '<div class="arrow"></div>' +
+      '<div class="sigma-tooltip-header">{{"Hello"}}</div>' +
+      '<div class="sigma-tooltip-body">' +
+      '  <p> Context menu for {{"Hello"}} </p>' +
+      '</div>' +
+      '<div class="sigma-tooltip-footer">Number of connections: {{"Hello"}} </div>',
+    renderer: function(node, template) {
+      node.degree = this.degree(node.id);
+      return Mustache.render(template, node);
+    }
+  }],
+  stage: {
+    template:
+      '<div class="arrow"></div>' +
+      '<div class="sigma-tooltip-header"> Menu </div>'
+  }
+};
+
+// Instantiate the tooltips plugin with a Mustache renderer for node
+var tooltips = sigma.plugins.tooltips(s, s.renderers[0], config);
+
+tooltips.bind('shown', function(event) {
+  console.log('tooltip shown', event);
+});
+
+tooltips.bind('hidden', function(event) {
+  console.log('tooltip hidden', event);
+});
 
   sigma.bind('clickNode', function(e) {
     var item = e.data.node.id
@@ -41,11 +203,11 @@
       dataType: "string"
     })
   });
-
-
+  s.stopForceAtlas2();
+  s.refresh()
 </script>
   <div>
-  <a class="col-md-offset-3 col-md-6 text-center"style="position:absolute;bottom:0;" href="/network-graph">
+  <a class="col-md-offset-3 col-md-6 text-center"style="position:absolute;bottom:0;" href="network-graph">
     <span class="input-group-btn glyphicon glyphicon-search">
       <button type="submit" id="submit" class="btn btn-success">
         <span class="glyphicon glyphicon-search">Back!</span>

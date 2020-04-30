@@ -10,13 +10,14 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField
 from RunDatabase import RunDB
-from Tester import tester
+from Grapher import grapher
 
 from flask import Flask
 
 
 app = Flask(__name__)
 app.static_folder = 'static'
+app.template_folder = 'templates'
 
 class KeywordForm(FlaskForm):
     kw = StringField('keyword')
@@ -55,34 +56,44 @@ def home():
         try:
             kw = request.form['kw']
             return render_template(
-            'keywordsearch.html',
-            title='Keyword Search',
-            year=datetime.now().year,
-            message=kw)
+                'keywordsearch.html',
+                title='Keyword Search',
+                year=datetime.now().year,
+                message=kw)
         except:
             kw = request.form['author']
             return render_template(
-                'index.html',
-                title='Home Page',
+                'authorsearch.html',
+                title='Keyword Search',
                 year=datetime.now().year,
-                kw=kw)
+                message=kw)
 
     return render_template(
         'index.html',
         title='Home Page',
         year=datetime.now().year
     )
+@app.route('/authorsearch', methods=['GET', 'POST'])
+def authorSearch():
+    db2 = RunDB()
+    graphy = grapher()
+    kw = request.form['author']
+    res = db2.getIdsFromAuthor(kw)
+    results = db2.getSubAreas(res)
+    graph = graphy.generateAuthorGraph(res)
+    return render_template('GuiTest.html')
 
 @app.route('/keywordsearch', methods=['GET', 'POST'])
 def keywordsearch():
     """Renders the keyword page."""
 
     db2 = RunDB()
+    graphy = grapher()
     kw=request.form['kw']
     res = db2.getIdsFromKeyword(kw)
     results = db2.getSubAreas(res)
     print(results)
-    #graph = tester.generateDummyGraph(results, kw)
+    graph = graphy.generateKeywordGraph(results, kw)
     return render_template('GuiTest.html')
     #return render_template(
     #    'keywordsearch.html',
@@ -90,7 +101,7 @@ def keywordsearch():
     #    year=datetime.now().year,
     #   kw=kw,
     #   results=results
-    #)
+
 @app.route('/cat/<results><area>', methods=['GET', 'POST'])
 def cat(results, area):
     db2 = RunDB()

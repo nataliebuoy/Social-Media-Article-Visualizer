@@ -5,3 +5,4 @@ class edge(JSONEncoder):
         self.id = str(ident)
         self.source = ident
         self.target = kw
+        self.type = "arrow"
