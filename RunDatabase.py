@@ -199,5 +199,39 @@ class RunDB:
 
             return None
 
-        
+    def getCitedBy(self, id):
+
+        try:
+            connection = psycopg2.connect(user="stephen",
+                                          password="stephen",
+                                          host="localhost",
+                                          port="5434",
+                                          database="stephen")
+            cursor = connection.cursor()
+
+            postgreSQL_select_Query = "SELECT * FROM public.cited_by WHERE article_id = "
+            postgreSQL_select_Query = postgreSQL_select_Query + str(id)
+            # print (postgreSQL_select_Query)
+            cursor.execute(postgreSQL_select_Query)
+            # use fetchall() to get all articles, use fetchmany(x) to get x number of articles"
+            # artTemp = cursor.fetchall()
+            artTemp = cursor.fetchall()
+
+            retCites = []
+
+            newNode = ArticleNode()
+            for row in artTemp:
+                print("here")
+                newNode = self.getInfoFromId(row[1])
+                retCites.append(newNode)
+
+            print("CITED BY =", retCites)
+            return retCites;
+
+
+
+        except (Exception, psycopg2.Error) as error:
+            print("Error while fetching  data from PostgreSQL", error)
+
+        return None
             

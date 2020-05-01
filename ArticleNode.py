@@ -15,7 +15,11 @@ class ArticleNode:
         self.predecessors = []          #Article nodes of articles citing current article
         self.visited = False            # BFS checking variable
     def getInfo(self):
-        print ("Name: ",self.name)
-        print ("KeyWords: ",list(self.keywordDict.values()))           #keywords: lowercase keywords, stripped of whitespaces
-        print("Cited",self.cited) 
+        return(self.articleId)
+    def getSubCat(self):
+        return (self.subCat)
+    def getReferences(self):
+        return (self.references)
+    def getTitle(self):
+        return(self.title)
 
