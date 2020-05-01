@@ -1,1708 +1,1141 @@
 {
     "nodes": [
         {
-            "id": "twitter",
-            "label": "twitter",
+            "id": "facebook",
+            "label": "facebook",
             "x": 0,
             "y": 0,
             "size": 3,
-            "color": "#aa1c22",
+            "color": "#aa5c28",
             "count": 3
         },
         {
             "id": "Undefined",
             "label": "Undefined",
-            "x": 30,
-            "y": 39,
+            "x": 42,
+            "y": -64,
             "size": 2,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 2
         },
         {
-            "id": "<ArticleNode.ArticleNode object at 0x08F2F990>",
-            "label": "<ArticleNode.ArticleNode object at 0x08F2F990>",
-            "x": -34,
-            "y": -33,
+            "id": "<ArticleNode.ArticleNode object at 0x097FADD0>",
+            "label": "<ArticleNode.ArticleNode object at 0x097FADD0>",
+            "x": -64,
+            "y": -74,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "1167966",
-            "label": "1167966",
-            "x": -43,
-            "y": -85,
+            "id": "1261176",
+            "label": "1261176",
+            "x": 80,
+            "y": -68,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1123930",
-            "label": "1123930",
-            "x": 27,
-            "y": 46,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1263771",
-            "label": "1263771",
-            "x": 65,
-            "y": -41,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "361689",
-            "label": "361689",
-            "x": 32,
-            "y": -78,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1263786",
             "label": "1263786",
-            "x": -51,
-            "y": -23,
+            "x": 61,
+            "y": -28,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
+            "count": 1
+        },
+        {
+            "id": "997",
+            "label": "997",
+            "x": -74,
+            "y": 15,
+            "size": 1,
+            "color": "#d1a065",
+            "count": 1
+        },
+        {
+            "id": "4886568",
+            "label": "4886568",
+            "x": -21,
+            "y": 46,
+            "size": 1,
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1261256",
             "label": "1261256",
-            "x": -74,
-            "y": -53,
+            "x": 19,
+            "y": -47,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "150853",
-            "label": "150853",
-            "x": 85,
-            "y": 77,
+            "id": "1261953",
+            "label": "1261953",
+            "x": -90,
+            "y": 48,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "1233051",
-            "label": "1233051",
-            "x": -21,
-            "y": -87,
+            "id": "1261867",
+            "label": "1261867",
+            "x": -76,
+            "y": -63,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "335123",
-            "label": "335123",
-            "x": 73,
-            "y": -46,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1261153",
-            "label": "1261153",
-            "x": -92,
-            "y": 64,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1261842",
             "label": "1261842",
-            "x": -51,
-            "y": 97,
+            "x": -4,
+            "y": 61,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "5186366",
-            "label": "5186366",
-            "x": -100,
-            "y": -93,
+            "id": "3524138",
+            "label": "3524138",
+            "x": -37,
+            "y": -76,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1232707",
             "label": "1232707",
-            "x": 7,
-            "y": -52,
+            "x": 81,
+            "y": 82,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1150918",
-            "label": "1150918",
-            "x": -90,
-            "y": 61,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "5197692",
-            "label": "5197692",
-            "x": -65,
-            "y": -28,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1231442",
-            "label": "1231442",
-            "x": -39,
-            "y": -22,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "19811",
-            "label": "19811",
-            "x": -12,
-            "y": -17,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1231970",
             "label": "1231970",
-            "x": 92,
-            "y": -95,
+            "x": 78,
+            "y": -76,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "2674979",
-            "label": "2674979",
-            "x": -69,
-            "y": 78,
+            "id": "5267681",
+            "label": "5267681",
+            "x": 97,
+            "y": -39,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "5274192",
-            "label": "5274192",
-            "x": -74,
-            "y": 35,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "19424",
-            "label": "19424",
-            "x": 70,
-            "y": -59,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "250375",
-            "label": "250375",
-            "x": -70,
-            "y": 94,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "25255",
-            "label": "25255",
-            "x": 14,
-            "y": -28,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1232871",
-            "label": "1232871",
-            "x": 22,
-            "y": -84,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1232331",
             "label": "1232331",
-            "x": 18,
-            "y": 87,
+            "x": -38,
+            "y": -39,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "1167646",
-            "label": "1167646",
-            "x": -100,
-            "y": 68,
+            "id": "5372551",
+            "label": "5372551",
+            "x": -72,
+            "y": -94,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1254815",
-            "label": "1254815",
-            "x": -6,
-            "y": 16,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "317366",
-            "label": "317366",
-            "x": 29,
-            "y": 94,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "267301",
-            "label": "267301",
-            "x": 28,
-            "y": -20,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1167140",
             "label": "1167140",
-            "x": 62,
-            "y": -66,
+            "x": 82,
+            "y": -89,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "4529736",
-            "label": "4529736",
-            "x": -87,
-            "y": -9,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "250395",
             "label": "250395",
-            "x": 89,
-            "y": -57,
+            "x": -17,
+            "y": -66,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1167153",
-            "label": "1167153",
-            "x": -15,
-            "y": 35,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "19266",
-            "label": "19266",
-            "x": 63,
-            "y": -15,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "928259",
             "label": "928259",
-            "x": 92,
-            "y": 30,
+            "x": -64,
+            "y": -9,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "19489",
-            "label": "19489",
-            "x": 84,
-            "y": 65,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "19415",
             "label": "19415",
-            "x": 68,
-            "y": 71,
+            "x": -63,
+            "y": -63,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "150852",
-            "label": "150852",
-            "x": -26,
-            "y": -16,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "193621",
-            "label": "193621",
-            "x": -89,
-            "y": -16,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "196243",
-            "label": "196243",
-            "x": 10,
-            "y": 57,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "267569",
-            "label": "267569",
-            "x": -8,
-            "y": 56,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "113314",
-            "label": "113314",
-            "x": -43,
-            "y": 88,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "25231",
-            "label": "25231",
-            "x": -64,
-            "y": -65,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1095295",
-            "label": "1095295",
-            "x": 98,
-            "y": 7,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1118994",
-            "label": "1118994",
-            "x": -76,
-            "y": 29,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1130716",
             "label": "1130716",
-            "x": -34,
-            "y": -58,
+            "x": -57,
+            "y": 40,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1132586",
             "label": "1132586",
-            "x": 99,
-            "y": 54,
+            "x": -32,
+            "y": 68,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1134344",
-            "label": "1134344",
-            "x": -71,
-            "y": -49,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1139527",
-            "label": "1139527",
-            "x": -62,
-            "y": -17,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "280256",
-            "label": "280256",
-            "x": 69,
-            "y": 67,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1124487",
             "label": "1124487",
-            "x": 37,
-            "y": 99,
+            "x": 50,
+            "y": 52,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "1175258",
-            "label": "1175258",
-            "x": 16,
-            "y": 53,
+            "id": "1453784",
+            "label": "1453784",
+            "x": -45,
+            "y": -1,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "1180624",
-            "label": "1180624",
-            "x": 59,
-            "y": -48,
+            "id": "1845394",
+            "label": "1845394",
+            "x": 82,
+            "y": -27,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "1191991",
-            "label": "1191991",
-            "x": -94,
-            "y": 70,
+            "id": "1262239",
+            "label": "1262239",
+            "x": -47,
+            "y": 8,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "369991",
-            "label": "369991",
-            "x": 97,
-            "y": -95,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1167297",
-            "label": "1167297",
-            "x": -60,
-            "y": 22,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1123829",
-            "label": "1123829",
-            "x": -76,
-            "y": 94,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1168137",
-            "label": "1168137",
-            "x": 62,
-            "y": 93,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "25303",
-            "label": "25303",
-            "x": 48,
-            "y": -8,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1167476",
-            "label": "1167476",
-            "x": -86,
-            "y": -59,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1101902",
-            "label": "1101902",
-            "x": -76,
-            "y": 17,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1232277",
-            "label": "1232277",
-            "x": 61,
-            "y": -83,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1184240",
-            "label": "1184240",
-            "x": 59,
-            "y": 78,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1124551",
-            "label": "1124551",
-            "x": -21,
-            "y": 40,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1095266",
-            "label": "1095266",
-            "x": 77,
-            "y": 12,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1210284",
             "label": "1210284",
-            "x": 27,
-            "y": 9,
+            "x": -33,
+            "y": -68,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "262663",
-            "label": "262663",
-            "x": -26,
-            "y": -32,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1095267",
             "label": "1095267",
-            "x": -18,
-            "y": 68,
+            "x": -36,
+            "y": 4,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1133976",
-            "label": "1133976",
-            "x": 46,
-            "y": 52,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "2343251",
-            "label": "2343251",
-            "x": 30,
-            "y": 8,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "279977",
             "label": "279977",
-            "x": -80,
-            "y": 5,
+            "x": -60,
+            "y": -36,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1359521",
             "label": "1359521",
-            "x": -57,
-            "y": -13,
+            "x": 31,
+            "y": 87,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "2686600",
-            "label": "2686600",
-            "x": 25,
-            "y": -4,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1261941",
-            "label": "1261941",
-            "x": -45,
-            "y": -36,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1263500",
             "label": "1263500",
-            "x": 6,
-            "y": 48,
+            "x": -89,
+            "y": 0,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "82285",
             "label": "82285",
-            "x": 32,
-            "y": -56,
+            "x": -74,
+            "y": -76,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "1231064",
-            "label": "1231064",
-            "x": -18,
-            "y": 46,
+            "id": "1262891",
+            "label": "1262891",
+            "x": 11,
+            "y": 53,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "266878",
-            "label": "266878",
-            "x": -51,
-            "y": 34,
+            "id": "2700398",
+            "label": "2700398",
+            "x": -100,
+            "y": -16,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "120451",
-            "label": "120451",
-            "x": 88,
-            "y": -6,
+            "id": "2089519",
+            "label": "2089519",
+            "x": -30,
+            "y": 61,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "113281",
-            "label": "113281",
-            "x": -60,
-            "y": -19,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "3308440",
             "label": "3308440",
-            "x": 28,
-            "y": 42,
+            "x": -8,
+            "y": 12,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
+            "count": 1
+        },
+        {
+            "id": "2385392",
+            "label": "2385392",
+            "x": 66,
+            "y": 68,
+            "size": 1,
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "2647624",
             "label": "2647624",
-            "x": 69,
-            "y": -64,
+            "x": -44,
+            "y": -89,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "250561",
-            "label": "250561",
-            "x": 29,
-            "y": -91,
+            "id": "1226977",
+            "label": "1226977",
+            "x": 5,
+            "y": -95,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "1232987",
-            "label": "1232987",
-            "x": 58,
-            "y": 21,
+            "id": "3524231",
+            "label": "3524231",
+            "x": -77,
+            "y": 18,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1261670",
             "label": "1261670",
-            "x": 57,
-            "y": 77,
+            "x": 15,
+            "y": -1,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
+            "count": 1
+        },
+        {
+            "id": "1261834",
+            "label": "1261834",
+            "x": 40,
+            "y": 57,
+            "size": 1,
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "279987",
             "label": "279987",
-            "x": 8,
-            "y": 11,
+            "x": -44,
+            "y": -48,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "3484238",
             "label": "3484238",
-            "x": 83,
-            "y": -20,
+            "x": -12,
+            "y": 50,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "3698915",
-            "label": "3698915",
-            "x": -14,
-            "y": -48,
+            "id": "67804",
+            "label": "67804",
+            "x": 34,
+            "y": -89,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "3874886",
-            "label": "3874886",
-            "x": -96,
-            "y": -44,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "3838806",
             "label": "3838806",
-            "x": 26,
-            "y": 30,
+            "x": -49,
+            "y": -20,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1261905",
             "label": "1261905",
-            "x": 50,
-            "y": 81,
+            "x": 39,
+            "y": -1,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1168207",
-            "label": "1168207",
-            "x": 16,
-            "y": 6,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1263588",
             "label": "1263588",
-            "x": -55,
-            "y": -7,
+            "x": 45,
+            "y": 60,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1123881",
-            "label": "1123881",
-            "x": 82,
-            "y": 7,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1168261",
             "label": "1168261",
-            "x": 2,
-            "y": 2,
+            "x": 8,
+            "y": 47,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1166971",
-            "label": "1166971",
-            "x": 7,
-            "y": 24,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1166867",
-            "label": "1166867",
-            "x": -75,
-            "y": 46,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1232742",
-            "label": "1232742",
-            "x": -24,
-            "y": -38,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "370179",
             "label": "370179",
-            "x": -88,
-            "y": -97,
+            "x": -93,
+            "y": -15,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "19749",
             "label": "19749",
-            "x": -3,
-            "y": -55,
+            "x": 12,
+            "y": 11,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1263005",
-            "label": "1263005",
-            "x": -13,
-            "y": -5,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "250501",
-            "label": "250501",
-            "x": 37,
-            "y": -47,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "279836",
-            "label": "279836",
-            "x": 52,
-            "y": -50,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1255137",
-            "label": "1255137",
-            "x": 8,
-            "y": -45,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1261412",
             "label": "1261412",
-            "x": 45,
-            "y": 85,
+            "x": -82,
+            "y": -4,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
+            "count": 1
+        },
+        {
+            "id": "1261460",
+            "label": "1261460",
+            "x": -21,
+            "y": -31,
+            "size": 1,
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "4273074",
             "label": "4273074",
             "x": -15,
-            "y": -64,
+            "y": -67,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "1167491",
-            "label": "1167491",
-            "x": 0,
-            "y": 86,
+            "id": "1260920",
+            "label": "1260920",
+            "x": 13,
+            "y": 81,
             "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1168335",
-            "label": "1168335",
-            "x": 98,
-            "y": 18,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1085065",
-            "label": "1085065",
-            "x": -85,
-            "y": 85,
-            "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1263954",
             "label": "1263954",
-            "x": -20,
-            "y": 9,
+            "x": 32,
+            "y": -53,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "25219",
-            "label": "25219",
-            "x": 35,
-            "y": -3,
+            "id": "2041897",
+            "label": "2041897",
+            "x": -44,
+            "y": 29,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
+            "count": 1
+        },
+        {
+            "id": "1262280",
+            "label": "1262280",
+            "x": 50,
+            "y": 58,
+            "size": 1,
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "1263331",
             "label": "1263331",
-            "x": 40,
-            "y": 9,
+            "x": 19,
+            "y": 100,
             "size": 1,
-            "color": "#99685f",
+            "color": "#d1a065",
             "count": 1
         },
         {
-            "id": "1168266",
-            "label": "1168266",
-            "x": -3,
-            "y": -41,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1167330",
-            "label": "1167330",
-            "x": -10,
-            "y": -77,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "1167444",
-            "label": "1167444",
-            "x": 31,
-            "y": -69,
-            "size": 1,
-            "color": "#99685f",
-            "count": 1
-        },
-        {
-            "id": "computer science",
-            "label": "computer science",
-            "x": 11,
-            "y": -73,
-            "size": 2,
-            "color": "#e3bb4f",
-            "count": 2
-        },
-        {
-            "id": "1231288",
-            "label": "Title: The 2014 Indian elections on Twitter ArticleID: 1231288 SubCategory: computer networks and communications",
-            "x": 15,
-            "y": -64,
-            "size": 1,
-            "color": "#e3bb4f",
-            "count": 1
-        },
-        {
-            "id": "1496927",
-            "label": "Title: Social Technologies, Informal Knowledge Practices, and the Enterprise ArticleID: 1496927 SubCategory: computational theory and mathematics",
-            "x": 88,
-            "y": -3,
-            "size": 1,
-            "color": "#e3bb4f",
-            "count": 1
-        },
-        {
-            "id": "1145318",
-            "label": "Title: The Rise of Twitter in the Political Campaign: Searching for Intermedia Agenda-Setting Effects in the Presidential Primary ArticleID: 1145318 SubCategory: computer science applications",
-            "x": 74,
-            "y": -21,
-            "size": 1,
-            "color": "#e3bb4f",
-            "count": 1
-        },
-        {
-            "id": "1132889",
-            "label": "Title: Disinformation and social bot operations in the run up to the 2017 French presidential election ArticleID: 1132889 SubCategory: computer networks and communications",
-            "x": 14,
-            "y": -69,
-            "size": 1,
-            "color": "#e3bb4f",
-            "count": 1
-        },
-        {
-            "id": "decision sciences",
-            "label": "decision sciences",
-            "x": -5,
+            "id": "1261098",
+            "label": "1261098",
+            "x": -82,
             "y": 49,
-            "size": 2,
-            "color": "#7f858a",
-            "count": 2
-        },
-        {
-            "id": "1123990",
-            "label": "Title: Emotions and Information Diffusion in Social Media\u2014Sentiment of Microblogs and Sharing Behavior ArticleID: 1123990 SubCategory: management science and operations research",
-            "x": -37,
-            "y": -38,
             "size": 1,
-            "color": "#7f858a",
-            "count": 1
-        },
-        {
-            "id": "19647",
-            "label": "Title: Evaluating information diffusion speed and its determinants in social media networks during humanitarian crises ArticleID: 19647 SubCategory: management science and operations research",
-            "x": 48,
-            "y": 63,
-            "size": 1,
-            "color": "#7f858a",
-            "count": 1
-        },
-        {
-            "id": "1226954",
-            "label": "Title: Social Media Analytics: Literature Review and Directions for Future Research ArticleID: 1226954 SubCategory: general decision sciences",
-            "x": 77,
-            "y": 34,
-            "size": 1,
-            "color": "#7f858a",
-            "count": 1
-        },
-        {
-            "id": "social sciences",
-            "label": "social sciences",
-            "x": 59,
-            "y": 69,
-            "size": 2,
-            "color": "#89150f",
-            "count": 2
-        },
-        {
-            "id": "19696",
-            "label": "Title: Assessing the Bias in Samples of Large Online Networks ArticleID: 19696 SubCategory: anthropology",
-            "x": -17,
-            "y": -9,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "1262473",
-            "label": "Title: Challenging prevailing narratives with Twitter: An #AustraliaDay case study of participation, representation and elimination of voice in an archive: ArticleID: 1262473 SubCategory: library and information sciences",
-            "x": 56,
-            "y": 43,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "19306",
-            "label": "Title: Spatial, temporal, and socioeconomic patterns in the use of Twitter and Flickr ArticleID: 19306 SubCategory: geography, planning and development",
-            "x": 45,
-            "y": -97,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "5185971",
-            "label": "Title: An Analysis of Twitter and Facebook Use by the Archival Community ArticleID: 5185971 SubCategory: library and information sciences",
-            "x": 24,
-            "y": -92,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "138327",
-            "label": "Title: Social media processes in disasters: Implications of emergent technology use ArticleID: 138327 SubCategory: education",
-            "x": -46,
-            "y": 57,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "225255",
-            "label": "Title: From Silence to #WhyIStayed: Locating Our Stories and Finding Our Voices ArticleID: 225255 SubCategory: communication",
-            "x": -55,
-            "y": -70,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "163091",
-            "label": "Title: Occupy Wall Street Exploring Informal Learning About a Social Movement on Twitter ArticleID: 163091 SubCategory: cultural studies",
-            "x": 82,
-            "y": 7,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "1020",
-            "label": "Title: Imagining Twitter as an Imagined Community ArticleID: 1020 SubCategory: cultural studies",
-            "x": -88,
-            "y": -60,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "151915",
-            "label": "Title: Facebook, Twitter, and Youth Engagement: A Quasi-experimental Study of Social Media Use and Protest Behavior Using Propensity Score Matching ArticleID: 151915 SubCategory: communication",
-            "x": -49,
-            "y": 18,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "1263558",
-            "label": "Title: Students\u2019 participation in peer-to-peer communication supported by social media ArticleID: 1263558 SubCategory: library and information sciences",
-            "x": 17,
-            "y": -38,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "1261892",
-            "label": "Title: Twitter for two: investigating the effects of dialogue with customers in social media ArticleID: 1261892 SubCategory: communication",
-            "x": -63,
-            "y": -15,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "1125197",
-            "label": "Title: Social teaching: Student perspectives on the inclusion of social media in higher education ArticleID: 1125197 SubCategory: library and information sciences",
-            "x": -100,
-            "y": -5,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "4263465",
-            "label": "Title: A university library\u2019s use of social media during a time of crisis ArticleID: 4263465 SubCategory: library and information sciences",
-            "x": -14,
-            "y": -77,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "166403",
-            "label": "Title: Analyzing the spread of tweets in response to Paris attacks ArticleID: 166403 SubCategory: urban studies",
-            "x": -66,
-            "y": 15,
-            "size": 1,
-            "color": "#89150f",
-            "count": 1
-        },
-        {
-            "id": "mathematics",
-            "label": "mathematics",
-            "x": -43,
-            "y": 19,
-            "size": 2,
-            "color": "#7b9292",
-            "count": 2
-        },
-        {
-            "id": "113291",
-            "label": "Title: A multilayer approach to multiplexity and link prediction in online geo-social networks ArticleID: 113291 SubCategory: computational mathematics",
-            "x": -54,
-            "y": -48,
-            "size": 1,
-            "color": "#7b9292",
-            "count": 1
-        },
-        {
-            "id": "1273166",
-            "label": "Title: Enhancing organisational competitiveness via social media : a strategy as practice perspective ArticleID: 1273166 SubCategory: theoretical computer science",
-            "x": -52,
-            "y": 81,
-            "size": 1,
-            "color": "#7b9292",
-            "count": 1
-        },
-        {
-            "id": "engineering",
-            "label": "engineering",
-            "x": -99,
-            "y": 81,
-            "size": 2,
-            "color": "#228081",
-            "count": 2
-        },
-        {
-            "id": "1233108",
-            "label": "Title: Characterization of cross-posting activity for professional users across Facebook, Twitter and Google+ ArticleID: 1233108 SubCategory: media technology",
-            "x": -80,
-            "y": 27,
-            "size": 1,
-            "color": "#228081",
-            "count": 1
-        },
-        {
-            "id": "1084490",
-            "label": "Title: Media trustworthiness verification and event assessment through an integrated framework: a case-study ArticleID: 1084490 SubCategory: media technology",
-            "x": -90,
-            "y": 24,
-            "size": 1,
-            "color": "#228081",
-            "count": 1
-        },
-        {
-            "id": "1166824",
-            "label": "Title: Mining social media to inform peatland fire and haze disaster management ArticleID: 1166824 SubCategory: media technology",
-            "x": 81,
-            "y": 31,
-            "size": 1,
-            "color": "#228081",
-            "count": 1
-        },
-        {
-            "id": "1124152",
-            "label": "Title: Modeling and OLAPing social media: the case of Twitter ArticleID: 1124152 SubCategory: media technology",
-            "x": -49,
-            "y": 23,
-            "size": 1,
-            "color": "#228081",
-            "count": 1
-        },
-        {
-            "id": "business, management and accounting",
-            "label": "business, management and accounting",
-            "x": 64,
-            "y": 37,
-            "size": 2,
-            "color": "#80ef92",
-            "count": 2
-        },
-        {
-            "id": "19780",
-            "label": "Title: Engaging Australian Rules Football fans with social media: a case study ArticleID: 19780 SubCategory: business and international management",
-            "x": -78,
-            "y": -72,
-            "size": 1,
-            "color": "#80ef92",
-            "count": 1
-        },
-        {
-            "id": "1167072",
-            "label": "Title: Social Media-Based Forecasting: A Case Study of Tweets and Stock Prices in the Financial Services Industry ArticleID: 1167072 SubCategory: strategy and management",
-            "x": 51,
-            "y": -99,
-            "size": 1,
-            "color": "#80ef92",
-            "count": 1
-        },
-        {
-            "id": "1262614",
-            "label": "Title: Do Social Media Tools Impact the Development Phase? An Exploratory Study\u2020 ArticleID: 1262614 SubCategory: strategy and management",
-            "x": 18,
-            "y": 59,
-            "size": 1,
-            "color": "#80ef92",
-            "count": 1
-        },
-        {
-            "id": "1254757",
-            "label": "Title: Social media management strategies for organizational impression management and their effect on public perception ArticleID: 1254757 SubCategory: management information systems",
-            "x": 39,
-            "y": 84,
-            "size": 1,
-            "color": "#80ef92",
-            "count": 1
-        },
-        {
-            "id": "1263302",
-            "label": "Title: Using Startup Communication For Opportunity Recognition \u2014 An Approach To Identify Future Product Trends ArticleID: 1263302 SubCategory: business and international management",
-            "x": 49,
-            "y": 8,
-            "size": 1,
-            "color": "#80ef92",
-            "count": 1
-        },
-        {
-            "id": "1177752",
-            "label": "Title: The early bird catches the news: Nine things you should know about micro-blogging ArticleID: 1177752 SubCategory: business and international management",
-            "x": -21,
-            "y": 51,
-            "size": 1,
-            "color": "#80ef92",
-            "count": 1
-        },
-        {
-            "id": "228632",
-            "label": "Title: Users of the world, unite! The challenges and opportunities of Social Media ArticleID: 228632 SubCategory: business and international management",
-            "x": 41,
-            "y": -71,
-            "size": 1,
-            "color": "#80ef92",
-            "count": 1
-        },
-        {
-            "id": "193677",
-            "label": "Title: We're all connected: The power of the social media ecosystem ArticleID: 193677 SubCategory: business and international management",
-            "x": 53,
-            "y": -28,
-            "size": 1,
-            "color": "#80ef92",
-            "count": 1
-        },
-        {
-            "id": "174909",
-            "label": "Title: Technology acceptance model (TAM) and social media usage: an empirical study on Facebook ArticleID: 174909 SubCategory: management of technology and innovation",
-            "x": 65,
-            "y": 77,
-            "size": 1,
-            "color": "#80ef92",
-            "count": 1
-        },
-        {
-            "id": "1262500",
-            "label": "Title: The adoption of social media marketing in South African banks ArticleID: 1262500 SubCategory: business, management and accounting (miscellaneous)",
-            "x": 91,
-            "y": -18,
-            "size": 1,
-            "color": "#80ef92",
-            "count": 1
-        },
-        {
-            "id": "194457",
-            "label": "Title: Microblogging in Higher Education: The Edmodo Case Study among Computer Science Learners in Finland ArticleID: 194457 SubCategory: strategy and management",
-            "x": 44,
-            "y": 45,
-            "size": 1,
-            "color": "#80ef92",
-            "count": 1
-        },
-        {
-            "id": "636584",
-            "label": "Title: Analyzing Twitter to explore perceptions of Asian restaurants ArticleID: 636584 SubCategory: tourism, leisure and hospitality management",
-            "x": 30,
-            "y": -82,
-            "size": 1,
-            "color": "#80ef92",
-            "count": 1
-        },
-        {
-            "id": "arts and humanities",
-            "label": "arts and humanities",
-            "x": -16,
-            "y": -24,
-            "size": 2,
-            "color": "#67c52e",
-            "count": 2
-        },
-        {
-            "id": "19010",
-            "label": "Title: Connecting the dots: A longitudinal observation of relief organizations' representational networks on social media ArticleID: 19010 SubCategory: arts and humanities (miscellaneous)",
-            "x": 30,
-            "y": 8,
-            "size": 1,
-            "color": "#67c52e",
-            "count": 1
-        },
-        {
-            "id": "198070",
-            "label": "Title: Exploring extreme events on social media ArticleID: 198070 SubCategory: arts and humanities (miscellaneous)",
-            "x": 60,
-            "y": 87,
-            "size": 1,
-            "color": "#67c52e",
-            "count": 1
-        },
-        {
-            "id": "262716",
-            "label": "Title: Communication in the face of a school crisis ArticleID: 262716 SubCategory: arts and humanities (miscellaneous)",
-            "x": 10,
-            "y": 20,
-            "size": 1,
-            "color": "#67c52e",
-            "count": 1
-        },
-        {
-            "id": "262715",
-            "label": "Title: Full Length ArticleCommunication in the face of a school crisis: Examining the volume and content of social media mentions during active shooter incidents ArticleID: 262715 SubCategory: arts and humanities (miscellaneous)",
-            "x": 43,
-            "y": -61,
-            "size": 1,
-            "color": "#67c52e",
-            "count": 1
-        },
-        {
-            "id": "1124609",
-            "label": "Title: Understanding the use of social media by organisations for crisis communication ArticleID: 1124609 SubCategory: arts and humanities (miscellaneous)",
-            "x": 85,
-            "y": -74,
-            "size": 1,
-            "color": "#67c52e",
-            "count": 1
-        },
-        {
-            "id": "306868",
-            "label": "Title: How demanding is social media: Understanding social media diets as a function of perceived costs and benefits - A rational actor perspective ArticleID: 306868 SubCategory: arts and humanities (miscellaneous)",
-            "x": -25,
-            "y": -64,
-            "size": 1,
-            "color": "#67c52e",
-            "count": 1
-        },
-        {
-            "id": "356528",
-            "label": "Title: Facebook, Twitter, & Qr codes ArticleID: 356528 SubCategory: arts and humanities (miscellaneous)",
-            "x": 34,
-            "y": 79,
-            "size": 1,
-            "color": "#67c52e",
-            "count": 1
-        },
-        {
-            "id": "1167731",
-            "label": "Title: Twitter and Politics: Identifying Turkish Opinion Leaders in New Social Media ArticleID: 1167731 SubCategory: history",
-            "x": -22,
-            "y": 30,
-            "size": 1,
-            "color": "#67c52e",
-            "count": 1
-        },
-        {
-            "id": "multidisciplinary",
-            "label": "multidisciplinary",
-            "x": -5,
-            "y": -62,
-            "size": 2,
-            "color": "#70546b",
-            "count": 2
-        },
-        {
-            "id": "25086",
-            "label": "Title: Competition among memes in a world with limited attention ArticleID: 25086 SubCategory: multidisciplinary",
-            "x": -88,
-            "y": -53,
-            "size": 1,
-            "color": "#70546b",
-            "count": 1
-        },
-        {
-            "id": "medicine",
-            "label": "medicine",
-            "x": -10,
-            "y": 85,
-            "size": 2,
-            "color": "#c95925",
-            "count": 2
-        },
-        {
-            "id": "1095243",
-            "label": "Title: Radiologists\u2019 Usage of Social Media: Results of the RANSOM Survey ArticleID: 1095243 SubCategory: radiology nuclear medicine and imaging",
-            "x": 75,
-            "y": 72,
-            "size": 1,
-            "color": "#c95925",
-            "count": 1
-        },
-        {
-            "id": "1100163",
-            "label": "Title: Professional Social Networking in Radiology: Who Is There and What Are They Doing? ArticleID: 1100163 SubCategory: radiology nuclear medicine and imaging",
-            "x": -25,
-            "y": 73,
-            "size": 1,
-            "color": "#c95925",
-            "count": 1
-        },
-        {
-            "id": "1226940",
-            "label": "Title: Social Media for the Dissemination of Cochrane Child Health Evidence: Evaluation Study ArticleID: 1226940 SubCategory: health informatics",
-            "x": -22,
-            "y": 62,
-            "size": 1,
-            "color": "#c95925",
-            "count": 1
-        },
-        {
-            "id": "1095271",
-            "label": "Title: Patients\u2019 and health professionals\u2019 use of social media in health care: Motives, barriers and expectations ArticleID: 1095271 SubCategory: general medicine",
-            "x": -24,
-            "y": -31,
-            "size": 1,
-            "color": "#c95925",
-            "count": 1
-        },
-        {
-            "id": "1226974",
-            "label": "Title: Trending now: future directions in digital media for the public health sector ArticleID: 1226974 SubCategory: public health, environmental and occupational health",
-            "x": 38,
-            "y": 20,
-            "size": 1,
-            "color": "#c95925",
+            "color": "#d1a065",
             "count": 1
         },
         {
             "id": "nursing",
             "label": "nursing",
-            "x": 87,
-            "y": 11,
+            "x": -2,
+            "y": 21,
             "size": 2,
-            "color": "#ce023a",
+            "color": "#d3e87e",
             "count": 2
         },
         {
-            "id": "1123942",
-            "label": "Title: Using Twitter\u2122 to drive research impact: A discussion of strategies, opportunities and challenges ArticleID: 1123942 SubCategory: general nursing",
-            "x": 52,
-            "y": -1,
+            "id": "1186797",
+            "label": "Title: Leveraging Social Capital of Persons With Intellectual Disabilities Through Facebook Participation: The Perspectives of Family Members and Direct Support Staff ArticleID: 1186797 SubCategory: community and home care",
+            "x": -40,
+            "y": 30,
             "size": 1,
-            "color": "#ce023a",
+            "color": "#d3e87e",
             "count": 1
         },
         {
             "id": "1124186",
             "label": "Title: Can I get a retweet please? Health research recruitment and the Twittersphere ArticleID: 1124186 SubCategory: general nursing",
-            "x": 90,
-            "y": -63,
+            "x": -66,
+            "y": 58,
             "size": 1,
-            "color": "#ce023a",
+            "color": "#d3e87e",
             "count": 1
         },
         {
             "id": "1263149",
             "label": "Title: Social Media and Pediatric Hospital Medicine: How Our Discipline Benefits From a Virtual Community and Why It Matters for Our Future ArticleID: 1263149 SubCategory: pediatrics",
-            "x": 70,
-            "y": 86,
+            "x": -43,
+            "y": 72,
             "size": 1,
-            "color": "#ce023a",
+            "color": "#d3e87e",
             "count": 1
         },
         {
-            "id": "earth and planetary sciences",
-            "label": "earth and planetary sciences",
-            "x": 21,
-            "y": 21,
+            "id": "computer science",
+            "label": "computer science",
+            "x": -18,
+            "y": -71,
             "size": 2,
-            "color": "#5cc185",
+            "color": "#19e2e2",
             "count": 2
         },
         {
-            "id": "166412",
-            "label": "Title: Revisiting the death of geography in the era of Big Data: the friction of distance in cyberspace and real space ArticleID: 166412 SubCategory: general earth and planetary sciences",
-            "x": 64,
-            "y": -36,
+            "id": "54829",
+            "label": "Title: Social Media Use for News and Individuals' Social Capital, Civic Engagement and Political Participation ArticleID: 54829 SubCategory: computer science applications",
+            "x": -68,
+            "y": 50,
             "size": 1,
-            "color": "#5cc185",
+            "color": "#19e2e2",
+            "count": 1
+        },
+        {
+            "id": "1496927",
+            "label": "Title: Social Technologies, Informal Knowledge Practices, and the Enterprise ArticleID: 1496927 SubCategory: computational theory and mathematics",
+            "x": 62,
+            "y": -91,
+            "size": 1,
+            "color": "#19e2e2",
+            "count": 1
+        },
+        {
+            "id": "social sciences",
+            "label": "social sciences",
+            "x": 84,
+            "y": 100,
+            "size": 2,
+            "color": "#dc6403",
+            "count": 2
+        },
+        {
+            "id": "4919088",
+            "label": "Title: Everyday Making through Facebook Engagement: Young Citizens\u2019 Political Interactions in Australia, the United Kingdom and the United States: ArticleID: 4919088 SubCategory: sociology and political science",
+            "x": -55,
+            "y": 95,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "14998",
+            "label": "Title: Knowledge Sharing Among Tourists via Social Media: A Comparison Between Facebook and TripAdvisor ArticleID: 14998 SubCategory: geography, planning and development",
+            "x": 53,
+            "y": -37,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "5185971",
+            "label": "Title: An Analysis of Twitter and Facebook Use by the Archival Community ArticleID: 5185971 SubCategory: library and information sciences",
+            "x": -38,
+            "y": -40,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "1020",
+            "label": "Title: Imagining Twitter as an Imagined Community ArticleID: 1020 SubCategory: cultural studies",
+            "x": 4,
+            "y": -18,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "52572",
+            "label": "Title: Determinants of consumer engagement in electronic word-of-mouth in social networking sites ArticleID: 52572 SubCategory: communication",
+            "x": 19,
+            "y": 35,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "429734",
+            "label": "Title: Antecedents and outcomes of information privacy concerns in a peer context: An exploratory study ArticleID: 429734 SubCategory: library and information sciences",
+            "x": 15,
+            "y": 48,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "151915",
+            "label": "Title: Facebook, Twitter, and Youth Engagement: A Quasi-experimental Study of Social Media Use and Protest Behavior Using Propensity Score Matching ArticleID: 151915 SubCategory: communication",
+            "x": -55,
+            "y": 46,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "221558",
+            "label": "Title: Translucent society and its non-fortuitous design: Producing and consuming reality through images ArticleID: 221558 SubCategory: cultural studies",
+            "x": 26,
+            "y": 96,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "1406977",
+            "label": "Title: Fortune 100 companies\u2019 Facebook strategies: corporate ability versus social responsibility ArticleID: 1406977 SubCategory: communication",
+            "x": -5,
+            "y": 60,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "1263558",
+            "label": "Title: Students\u2019 participation in peer-to-peer communication supported by social media ArticleID: 1263558 SubCategory: library and information sciences",
+            "x": 54,
+            "y": -88,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "19552",
+            "label": "Title: Co-citation and cluster analyses of extant literature on social networks ArticleID: 19552 SubCategory: library and information sciences",
+            "x": -35,
+            "y": -55,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "1125197",
+            "label": "Title: Social teaching: Student perspectives on the inclusion of social media in higher education ArticleID: 1125197 SubCategory: library and information sciences",
+            "x": 68,
+            "y": 74,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "4244566",
+            "label": "Title: Friend or Foe? Regional Newspapers and the Power of Facebook ArticleID: 4244566 SubCategory: cultural studies",
+            "x": 64,
+            "y": 61,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "4263465",
+            "label": "Title: A university library\u2019s use of social media during a time of crisis ArticleID: 4263465 SubCategory: library and information sciences",
+            "x": 15,
+            "y": -84,
+            "size": 1,
+            "color": "#dc6403",
+            "count": 1
+        },
+        {
+            "id": "engineering",
+            "label": "engineering",
+            "x": 59,
+            "y": 89,
+            "size": 2,
+            "color": "#0a1ca8",
+            "count": 2
+        },
+        {
+            "id": "1233108",
+            "label": "Title: Characterization of cross-posting activity for professional users across Facebook, Twitter and Google+ ArticleID: 1233108 SubCategory: media technology",
+            "x": -26,
+            "y": 79,
+            "size": 1,
+            "color": "#0a1ca8",
+            "count": 1
+        },
+        {
+            "id": "business, management and accounting",
+            "label": "business, management and accounting",
+            "x": 41,
+            "y": 96,
+            "size": 2,
+            "color": "#4e7fec",
+            "count": 2
+        },
+        {
+            "id": "19780",
+            "label": "Title: Engaging Australian Rules Football fans with social media: a case study ArticleID: 19780 SubCategory: business and international management",
+            "x": -71,
+            "y": -10,
+            "size": 1,
+            "color": "#4e7fec",
+            "count": 1
+        },
+        {
+            "id": "228632",
+            "label": "Title: Users of the world, unite! The challenges and opportunities of Social Media ArticleID: 228632 SubCategory: business and international management",
+            "x": -15,
+            "y": -75,
+            "size": 1,
+            "color": "#4e7fec",
+            "count": 1
+        },
+        {
+            "id": "193677",
+            "label": "Title: We're all connected: The power of the social media ecosystem ArticleID: 193677 SubCategory: business and international management",
+            "x": 27,
+            "y": 92,
+            "size": 1,
+            "color": "#4e7fec",
+            "count": 1
+        },
+        {
+            "id": "1406042",
+            "label": "Title: \u201cLike\u201d and \u201cCheck-in\u201d: how hotels utilize Facebook as an effective marketing tool ArticleID: 1406042 SubCategory: tourism, leisure and hospitality management",
+            "x": 59,
+            "y": 16,
+            "size": 1,
+            "color": "#4e7fec",
+            "count": 1
+        },
+        {
+            "id": "174909",
+            "label": "Title: Technology acceptance model (TAM) and social media usage: an empirical study on Facebook ArticleID: 174909 SubCategory: management of technology and innovation",
+            "x": 11,
+            "y": 33,
+            "size": 1,
+            "color": "#4e7fec",
+            "count": 1
+        },
+        {
+            "id": "1261409",
+            "label": "Title: Social media engagement: a model of antecedents and relational outcomes ArticleID: 1261409 SubCategory: strategy and management",
+            "x": 49,
+            "y": 25,
+            "size": 1,
+            "color": "#4e7fec",
+            "count": 1
+        },
+        {
+            "id": "1262500",
+            "label": "Title: The adoption of social media marketing in South African banks ArticleID: 1262500 SubCategory: business, management and accounting (miscellaneous)",
+            "x": -54,
+            "y": -67,
+            "size": 1,
+            "color": "#4e7fec",
+            "count": 1
+        },
+        {
+            "id": "187404",
+            "label": "Title: The impact of opinion leadership on purchases through social networking websites ArticleID: 187404 SubCategory: general business, management and accounting",
+            "x": -87,
+            "y": 33,
+            "size": 1,
+            "color": "#4e7fec",
+            "count": 1
+        },
+        {
+            "id": "595725",
+            "label": "Title: Relationship building through Facebook brand pages: the multifaceted roles of identification, satisfaction, and perceived relationship investment ArticleID: 595725 SubCategory: strategy and management",
+            "x": -90,
+            "y": 73,
+            "size": 1,
+            "color": "#4e7fec",
+            "count": 1
+        },
+        {
+            "id": "arts and humanities",
+            "label": "arts and humanities",
+            "x": -36,
+            "y": -63,
+            "size": 2,
+            "color": "#6105c8",
+            "count": 2
+        },
+        {
+            "id": "22836",
+            "label": "Title: What makes users share content on facebook? Compatibility among psychological incentive, social capital focus, and content type ArticleID: 22836 SubCategory: arts and humanities (miscellaneous)",
+            "x": -77,
+            "y": 30,
+            "size": 1,
+            "color": "#6105c8",
+            "count": 1
+        },
+        {
+            "id": "1262755",
+            "label": "Title: How do motives affect attitudes and behaviors toward internet advertising and Facebook advertising ArticleID: 1262755 SubCategory: arts and humanities (miscellaneous)",
+            "x": 74,
+            "y": 2,
+            "size": 1,
+            "color": "#6105c8",
+            "count": 1
+        },
+        {
+            "id": "19010",
+            "label": "Title: Connecting the dots: A longitudinal observation of relief organizations' representational networks on social media ArticleID: 19010 SubCategory: arts and humanities (miscellaneous)",
+            "x": 7,
+            "y": 69,
+            "size": 1,
+            "color": "#6105c8",
+            "count": 1
+        },
+        {
+            "id": "262716",
+            "label": "Title: Communication in the face of a school crisis ArticleID: 262716 SubCategory: arts and humanities (miscellaneous)",
+            "x": -5,
+            "y": 77,
+            "size": 1,
+            "color": "#6105c8",
+            "count": 1
+        },
+        {
+            "id": "262715",
+            "label": "Title: Full Length ArticleCommunication in the face of a school crisis: Examining the volume and content of social media mentions during active shooter incidents ArticleID: 262715 SubCategory: arts and humanities (miscellaneous)",
+            "x": -47,
+            "y": -84,
+            "size": 1,
+            "color": "#6105c8",
+            "count": 1
+        },
+        {
+            "id": "1124609",
+            "label": "Title: Understanding the use of social media by organisations for crisis communication ArticleID: 1124609 SubCategory: arts and humanities (miscellaneous)",
+            "x": -28,
+            "y": -3,
+            "size": 1,
+            "color": "#6105c8",
+            "count": 1
+        },
+        {
+            "id": "306868",
+            "label": "Title: How demanding is social media: Understanding social media diets as a function of perceived costs and benefits - A rational actor perspective ArticleID: 306868 SubCategory: arts and humanities (miscellaneous)",
+            "x": 44,
+            "y": 4,
+            "size": 1,
+            "color": "#6105c8",
+            "count": 1
+        },
+        {
+            "id": "3484351",
+            "label": "Title: Improving social media measurement in surveys ArticleID: 3484351 SubCategory: arts and humanities (miscellaneous)",
+            "x": -72,
+            "y": 64,
+            "size": 1,
+            "color": "#6105c8",
+            "count": 1
+        },
+        {
+            "id": "3484013",
+            "label": "Title: Too much face and not enough books: The relationship between multiple indices of Facebook use and academic performance ArticleID: 3484013 SubCategory: arts and humanities (miscellaneous)",
+            "x": -60,
+            "y": 16,
+            "size": 1,
+            "color": "#6105c8",
+            "count": 1
+        },
+        {
+            "id": "356528",
+            "label": "Title: Facebook, Twitter, & Qr codes ArticleID: 356528 SubCategory: arts and humanities (miscellaneous)",
+            "x": 35,
+            "y": -91,
+            "size": 1,
+            "color": "#6105c8",
+            "count": 1
+        },
+        {
+            "id": "490774",
+            "label": "Title: Visiting theories that predict college students' self-disclosure on Facebook ArticleID: 490774 SubCategory: arts and humanities (miscellaneous)",
+            "x": 1,
+            "y": -91,
+            "size": 1,
+            "color": "#6105c8",
+            "count": 1
+        },
+        {
+            "id": "1263246",
+            "label": "Title: How do online communities matter? Comparison between active and non-active participants in an online behavioral weight loss program ArticleID: 1263246 SubCategory: arts and humanities (miscellaneous)",
+            "x": -96,
+            "y": -79,
+            "size": 1,
+            "color": "#6105c8",
+            "count": 1
+        },
+        {
+            "id": "economics, econometrics and finance",
+            "label": "economics, econometrics and finance",
+            "x": 21,
+            "y": -31,
+            "size": 2,
+            "color": "#bc6626",
+            "count": 2
+        },
+        {
+            "id": "409814",
+            "label": "Title: DETERMINANTS OF SOCIAL MEDIA WEBSITE ATTRACTIVENESS ArticleID: 409814 SubCategory: general economics, econometrics and finance",
+            "x": 92,
+            "y": -35,
+            "size": 1,
+            "color": "#bc6626",
+            "count": 1
+        },
+        {
+            "id": "1262899",
+            "label": "Title: The importance of Facebook as an online social networking tool for companies ArticleID: 1262899 SubCategory: general economics, econometrics and finance",
+            "x": -2,
+            "y": 27,
+            "size": 1,
+            "color": "#bc6626",
+            "count": 1
+        },
+        {
+            "id": "4289480",
+            "label": "Title: Modeling Mgc Strategies under Extreme Negative Ugc ArticleID: 4289480 SubCategory: general economics, econometrics and finance",
+            "x": 29,
+            "y": 42,
+            "size": 1,
+            "color": "#bc6626",
+            "count": 1
+        },
+        {
+            "id": "medicine",
+            "label": "medicine",
+            "x": -59,
+            "y": 12,
+            "size": 2,
+            "color": "#180ae9",
+            "count": 2
+        },
+        {
+            "id": "1095243",
+            "label": "Title: Radiologists\u2019 Usage of Social Media: Results of the RANSOM Survey ArticleID: 1095243 SubCategory: radiology nuclear medicine and imaging",
+            "x": 67,
+            "y": 25,
+            "size": 1,
+            "color": "#180ae9",
+            "count": 1
+        },
+        {
+            "id": "1226940",
+            "label": "Title: Social Media for the Dissemination of Cochrane Child Health Evidence: Evaluation Study ArticleID: 1226940 SubCategory: health informatics",
+            "x": -40,
+            "y": 98,
+            "size": 1,
+            "color": "#180ae9",
+            "count": 1
+        },
+        {
+            "id": "1095271",
+            "label": "Title: Patients\u2019 and health professionals\u2019 use of social media in health care: Motives, barriers and expectations ArticleID: 1095271 SubCategory: general medicine",
+            "x": -61,
+            "y": -93,
+            "size": 1,
+            "color": "#180ae9",
+            "count": 1
+        },
+        {
+            "id": "1226974",
+            "label": "Title: Trending now: future directions in digital media for the public health sector ArticleID: 1226974 SubCategory: public health, environmental and occupational health",
+            "x": 96,
+            "y": 43,
+            "size": 1,
+            "color": "#180ae9",
+            "count": 1
+        },
+        {
+            "id": "psychology",
+            "label": "psychology",
+            "x": -100,
+            "y": 54,
+            "size": 2,
+            "color": "#c7de9e",
+            "count": 2
+        },
+        {
+            "id": "421836",
+            "label": "Title: The Relationships among Attachment Style, Personality Traits, Interpersonal Competency, and Facebook Use ArticleID: 421836 SubCategory: developmental and educational psychology",
+            "x": -59,
+            "y": -2,
+            "size": 1,
+            "color": "#c7de9e",
+            "count": 1
+        },
+        {
+            "id": "1876505",
+            "label": "Title: Negative comparisons about one's appearance mediate the relationship between Facebook usage and body image concerns ArticleID: 1876505 SubCategory: social psychology",
+            "x": -19,
+            "y": 57,
+            "size": 1,
+            "color": "#c7de9e",
+            "count": 1
+        },
+        {
+            "id": "mathematics",
+            "label": "mathematics",
+            "x": -5,
+            "y": 47,
+            "size": 2,
+            "color": "#cbf9bf",
+            "count": 2
+        },
+        {
+            "id": "1273166",
+            "label": "Title: Enhancing organisational competitiveness via social media : a strategy as practice perspective ArticleID: 1273166 SubCategory: theoretical computer science",
+            "x": 47,
+            "y": 54,
+            "size": 1,
+            "color": "#cbf9bf",
+            "count": 1
+        },
+        {
+            "id": "2436831",
+            "label": "Title: Diffusion of deception in social media: Social contagion effects and its antecedents ArticleID: 2436831 SubCategory: theoretical computer science",
+            "x": -82,
+            "y": -61,
+            "size": 1,
+            "color": "#cbf9bf",
+            "count": 1
+        },
+        {
+            "id": "multidisciplinary",
+            "label": "multidisciplinary",
+            "x": 76,
+            "y": -88,
+            "size": 2,
+            "color": "#1ae538",
+            "count": 2
+        },
+        {
+            "id": "3875149",
+            "label": "Title: Anatomy of news consumption on Facebook ArticleID: 3875149 SubCategory: multidisciplinary",
+            "x": 66,
+            "y": 76,
+            "size": 1,
+            "color": "#1ae538",
             "count": 1
         }
     ],
     "edges": [
         {
-            "id": "<ArticleNode.ArticleNode object at 0x08F2F990>",
-            "source": "<ArticleNode.ArticleNode object at 0x08F2F990>",
+            "id": "<ArticleNode.ArticleNode object at 0x097FADD0>",
+            "source": "<ArticleNode.ArticleNode object at 0x097FADD0>",
             "target": "Undefined",
             "type": "arrow"
         },
         {
-            "id": "1167966",
-            "source": "1167966",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1123930",
-            "source": "1123930",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1263771",
-            "source": "1263771",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "361689",
-            "source": "361689",
+            "id": "1261176",
+            "source": "1261176",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -1713,32 +1146,32 @@
             "type": "arrow"
         },
         {
+            "id": "997",
+            "source": "997",
+            "target": "Undefined",
+            "type": "arrow"
+        },
+        {
+            "id": "4886568",
+            "source": "4886568",
+            "target": "Undefined",
+            "type": "arrow"
+        },
+        {
             "id": "1261256",
             "source": "1261256",
             "target": "Undefined",
             "type": "arrow"
         },
         {
-            "id": "150853",
-            "source": "150853",
+            "id": "1261953",
+            "source": "1261953",
             "target": "Undefined",
             "type": "arrow"
         },
         {
-            "id": "1233051",
-            "source": "1233051",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "335123",
-            "source": "335123",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1261153",
-            "source": "1261153",
+            "id": "1261867",
+            "source": "1261867",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -1749,8 +1182,8 @@
             "type": "arrow"
         },
         {
-            "id": "5186366",
-            "source": "5186366",
+            "id": "3524138",
+            "source": "3524138",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -1761,68 +1194,14 @@
             "type": "arrow"
         },
         {
-            "id": "1150918",
-            "source": "1150918",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "5197692",
-            "source": "5197692",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1231442",
-            "source": "1231442",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "19811",
-            "source": "19811",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
             "id": "1231970",
             "source": "1231970",
             "target": "Undefined",
             "type": "arrow"
         },
         {
-            "id": "2674979",
-            "source": "2674979",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "5274192",
-            "source": "5274192",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "19424",
-            "source": "19424",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "250375",
-            "source": "250375",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "25255",
-            "source": "25255",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1232871",
-            "source": "1232871",
+            "id": "5267681",
+            "source": "5267681",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -1833,26 +1212,8 @@
             "type": "arrow"
         },
         {
-            "id": "1167646",
-            "source": "1167646",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1254815",
-            "source": "1254815",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "317366",
-            "source": "317366",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "267301",
-            "source": "267301",
+            "id": "5372551",
+            "source": "5372551",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -1863,26 +1224,8 @@
             "type": "arrow"
         },
         {
-            "id": "4529736",
-            "source": "4529736",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
             "id": "250395",
             "source": "250395",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1167153",
-            "source": "1167153",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "19266",
-            "source": "19266",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -1893,62 +1236,8 @@
             "type": "arrow"
         },
         {
-            "id": "19489",
-            "source": "19489",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
             "id": "19415",
             "source": "19415",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "150852",
-            "source": "150852",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "193621",
-            "source": "193621",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "196243",
-            "source": "196243",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "267569",
-            "source": "267569",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "113314",
-            "source": "113314",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "25231",
-            "source": "25231",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1095295",
-            "source": "1095295",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1118994",
-            "source": "1118994",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -1965,110 +1254,26 @@
             "type": "arrow"
         },
         {
-            "id": "1134344",
-            "source": "1134344",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1139527",
-            "source": "1139527",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "280256",
-            "source": "280256",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
             "id": "1124487",
             "source": "1124487",
             "target": "Undefined",
             "type": "arrow"
         },
         {
-            "id": "1175258",
-            "source": "1175258",
+            "id": "1453784",
+            "source": "1453784",
             "target": "Undefined",
             "type": "arrow"
         },
         {
-            "id": "1180624",
-            "source": "1180624",
+            "id": "1845394",
+            "source": "1845394",
             "target": "Undefined",
             "type": "arrow"
         },
         {
-            "id": "1191991",
-            "source": "1191991",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "369991",
-            "source": "369991",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1167297",
-            "source": "1167297",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1123829",
-            "source": "1123829",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1168137",
-            "source": "1168137",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "25303",
-            "source": "25303",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1167476",
-            "source": "1167476",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1101902",
-            "source": "1101902",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1232277",
-            "source": "1232277",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1184240",
-            "source": "1184240",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1124551",
-            "source": "1124551",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1095266",
-            "source": "1095266",
+            "id": "1262239",
+            "source": "1262239",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -2079,26 +1284,8 @@
             "type": "arrow"
         },
         {
-            "id": "262663",
-            "source": "262663",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
             "id": "1095267",
             "source": "1095267",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1133976",
-            "source": "1133976",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "2343251",
-            "source": "2343251",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -2115,18 +1302,6 @@
             "type": "arrow"
         },
         {
-            "id": "2686600",
-            "source": "2686600",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1261941",
-            "source": "1261941",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
             "id": "1263500",
             "source": "1263500",
             "target": "Undefined",
@@ -2139,26 +1314,20 @@
             "type": "arrow"
         },
         {
-            "id": "1231064",
-            "source": "1231064",
+            "id": "1262891",
+            "source": "1262891",
             "target": "Undefined",
             "type": "arrow"
         },
         {
-            "id": "266878",
-            "source": "266878",
+            "id": "2700398",
+            "source": "2700398",
             "target": "Undefined",
             "type": "arrow"
         },
         {
-            "id": "120451",
-            "source": "120451",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "113281",
-            "source": "113281",
+            "id": "2089519",
+            "source": "2089519",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -2169,26 +1338,38 @@
             "type": "arrow"
         },
         {
+            "id": "2385392",
+            "source": "2385392",
+            "target": "Undefined",
+            "type": "arrow"
+        },
+        {
             "id": "2647624",
             "source": "2647624",
             "target": "Undefined",
             "type": "arrow"
         },
         {
-            "id": "250561",
-            "source": "250561",
+            "id": "1226977",
+            "source": "1226977",
             "target": "Undefined",
             "type": "arrow"
         },
         {
-            "id": "1232987",
-            "source": "1232987",
+            "id": "3524231",
+            "source": "3524231",
             "target": "Undefined",
             "type": "arrow"
         },
         {
             "id": "1261670",
             "source": "1261670",
+            "target": "Undefined",
+            "type": "arrow"
+        },
+        {
+            "id": "1261834",
+            "source": "1261834",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -2205,14 +1386,8 @@
             "type": "arrow"
         },
         {
-            "id": "3698915",
-            "source": "3698915",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "3874886",
-            "source": "3874886",
+            "id": "67804",
+            "source": "67804",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -2229,44 +1404,14 @@
             "type": "arrow"
         },
         {
-            "id": "1168207",
-            "source": "1168207",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
             "id": "1263588",
             "source": "1263588",
             "target": "Undefined",
             "type": "arrow"
         },
         {
-            "id": "1123881",
-            "source": "1123881",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
             "id": "1168261",
             "source": "1168261",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1166971",
-            "source": "1166971",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1166867",
-            "source": "1166867",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1232742",
-            "source": "1232742",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -2283,32 +1428,14 @@
             "type": "arrow"
         },
         {
-            "id": "1263005",
-            "source": "1263005",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "250501",
-            "source": "250501",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "279836",
-            "source": "279836",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1255137",
-            "source": "1255137",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
             "id": "1261412",
             "source": "1261412",
+            "target": "Undefined",
+            "type": "arrow"
+        },
+        {
+            "id": "1261460",
+            "source": "1261460",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -2319,20 +1446,8 @@
             "type": "arrow"
         },
         {
-            "id": "1167491",
-            "source": "1167491",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1168335",
-            "source": "1168335",
-            "target": "Undefined",
-            "type": "arrow"
-        },
-        {
-            "id": "1085065",
-            "source": "1085065",
+            "id": "1260920",
+            "source": "1260920",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -2343,8 +1458,14 @@
             "type": "arrow"
         },
         {
-            "id": "25219",
-            "source": "25219",
+            "id": "2041897",
+            "source": "2041897",
+            "target": "Undefined",
+            "type": "arrow"
+        },
+        {
+            "id": "1262280",
+            "source": "1262280",
             "target": "Undefined",
             "type": "arrow"
         },
@@ -2355,26 +1476,32 @@
             "type": "arrow"
         },
         {
-            "id": "1168266",
-            "source": "1168266",
+            "id": "1261098",
+            "source": "1261098",
             "target": "Undefined",
             "type": "arrow"
         },
         {
-            "id": "1167330",
-            "source": "1167330",
-            "target": "Undefined",
+            "id": "1186797",
+            "source": "1186797",
+            "target": "nursing",
             "type": "arrow"
         },
         {
-            "id": "1167444",
-            "source": "1167444",
-            "target": "Undefined",
+            "id": "1124186",
+            "source": "1124186",
+            "target": "nursing",
             "type": "arrow"
         },
         {
-            "id": "1231288",
-            "source": "1231288",
+            "id": "1263149",
+            "source": "1263149",
+            "target": "nursing",
+            "type": "arrow"
+        },
+        {
+            "id": "54829",
+            "source": "54829",
             "target": "computer science",
             "type": "arrow"
         },
@@ -2385,50 +1512,14 @@
             "type": "arrow"
         },
         {
-            "id": "1145318",
-            "source": "1145318",
-            "target": "computer science",
-            "type": "arrow"
-        },
-        {
-            "id": "1132889",
-            "source": "1132889",
-            "target": "computer science",
-            "type": "arrow"
-        },
-        {
-            "id": "1123990",
-            "source": "1123990",
-            "target": "decision sciences",
-            "type": "arrow"
-        },
-        {
-            "id": "19647",
-            "source": "19647",
-            "target": "decision sciences",
-            "type": "arrow"
-        },
-        {
-            "id": "1226954",
-            "source": "1226954",
-            "target": "decision sciences",
-            "type": "arrow"
-        },
-        {
-            "id": "19696",
-            "source": "19696",
+            "id": "4919088",
+            "source": "4919088",
             "target": "social sciences",
             "type": "arrow"
         },
         {
-            "id": "1262473",
-            "source": "1262473",
-            "target": "social sciences",
-            "type": "arrow"
-        },
-        {
-            "id": "19306",
-            "source": "19306",
+            "id": "14998",
+            "source": "14998",
             "target": "social sciences",
             "type": "arrow"
         },
@@ -2439,26 +1530,20 @@
             "type": "arrow"
         },
         {
-            "id": "138327",
-            "source": "138327",
-            "target": "social sciences",
-            "type": "arrow"
-        },
-        {
-            "id": "225255",
-            "source": "225255",
-            "target": "social sciences",
-            "type": "arrow"
-        },
-        {
-            "id": "163091",
-            "source": "163091",
-            "target": "social sciences",
-            "type": "arrow"
-        },
-        {
             "id": "1020",
             "source": "1020",
+            "target": "social sciences",
+            "type": "arrow"
+        },
+        {
+            "id": "52572",
+            "source": "52572",
+            "target": "social sciences",
+            "type": "arrow"
+        },
+        {
+            "id": "429734",
+            "source": "429734",
             "target": "social sciences",
             "type": "arrow"
         },
@@ -2469,14 +1554,26 @@
             "type": "arrow"
         },
         {
+            "id": "221558",
+            "source": "221558",
+            "target": "social sciences",
+            "type": "arrow"
+        },
+        {
+            "id": "1406977",
+            "source": "1406977",
+            "target": "social sciences",
+            "type": "arrow"
+        },
+        {
             "id": "1263558",
             "source": "1263558",
             "target": "social sciences",
             "type": "arrow"
         },
         {
-            "id": "1261892",
-            "source": "1261892",
+            "id": "19552",
+            "source": "19552",
             "target": "social sciences",
             "type": "arrow"
         },
@@ -2487,27 +1584,15 @@
             "type": "arrow"
         },
         {
+            "id": "4244566",
+            "source": "4244566",
+            "target": "social sciences",
+            "type": "arrow"
+        },
+        {
             "id": "4263465",
             "source": "4263465",
             "target": "social sciences",
-            "type": "arrow"
-        },
-        {
-            "id": "166403",
-            "source": "166403",
-            "target": "social sciences",
-            "type": "arrow"
-        },
-        {
-            "id": "113291",
-            "source": "113291",
-            "target": "mathematics",
-            "type": "arrow"
-        },
-        {
-            "id": "1273166",
-            "source": "1273166",
-            "target": "mathematics",
             "type": "arrow"
         },
         {
@@ -2517,56 +1602,8 @@
             "type": "arrow"
         },
         {
-            "id": "1084490",
-            "source": "1084490",
-            "target": "engineering",
-            "type": "arrow"
-        },
-        {
-            "id": "1166824",
-            "source": "1166824",
-            "target": "engineering",
-            "type": "arrow"
-        },
-        {
-            "id": "1124152",
-            "source": "1124152",
-            "target": "engineering",
-            "type": "arrow"
-        },
-        {
             "id": "19780",
             "source": "19780",
-            "target": "business, management and accounting",
-            "type": "arrow"
-        },
-        {
-            "id": "1167072",
-            "source": "1167072",
-            "target": "business, management and accounting",
-            "type": "arrow"
-        },
-        {
-            "id": "1262614",
-            "source": "1262614",
-            "target": "business, management and accounting",
-            "type": "arrow"
-        },
-        {
-            "id": "1254757",
-            "source": "1254757",
-            "target": "business, management and accounting",
-            "type": "arrow"
-        },
-        {
-            "id": "1263302",
-            "source": "1263302",
-            "target": "business, management and accounting",
-            "type": "arrow"
-        },
-        {
-            "id": "1177752",
-            "source": "1177752",
             "target": "business, management and accounting",
             "type": "arrow"
         },
@@ -2583,8 +1620,20 @@
             "type": "arrow"
         },
         {
+            "id": "1406042",
+            "source": "1406042",
+            "target": "business, management and accounting",
+            "type": "arrow"
+        },
+        {
             "id": "174909",
             "source": "174909",
+            "target": "business, management and accounting",
+            "type": "arrow"
+        },
+        {
+            "id": "1261409",
+            "source": "1261409",
             "target": "business, management and accounting",
             "type": "arrow"
         },
@@ -2595,26 +1644,32 @@
             "type": "arrow"
         },
         {
-            "id": "194457",
-            "source": "194457",
+            "id": "187404",
+            "source": "187404",
             "target": "business, management and accounting",
             "type": "arrow"
         },
         {
-            "id": "636584",
-            "source": "636584",
+            "id": "595725",
+            "source": "595725",
             "target": "business, management and accounting",
+            "type": "arrow"
+        },
+        {
+            "id": "22836",
+            "source": "22836",
+            "target": "arts and humanities",
+            "type": "arrow"
+        },
+        {
+            "id": "1262755",
+            "source": "1262755",
+            "target": "arts and humanities",
             "type": "arrow"
         },
         {
             "id": "19010",
             "source": "19010",
-            "target": "arts and humanities",
-            "type": "arrow"
-        },
-        {
-            "id": "198070",
-            "source": "198070",
             "target": "arts and humanities",
             "type": "arrow"
         },
@@ -2643,32 +1698,56 @@
             "type": "arrow"
         },
         {
+            "id": "3484351",
+            "source": "3484351",
+            "target": "arts and humanities",
+            "type": "arrow"
+        },
+        {
+            "id": "3484013",
+            "source": "3484013",
+            "target": "arts and humanities",
+            "type": "arrow"
+        },
+        {
             "id": "356528",
             "source": "356528",
             "target": "arts and humanities",
             "type": "arrow"
         },
         {
-            "id": "1167731",
-            "source": "1167731",
+            "id": "490774",
+            "source": "490774",
             "target": "arts and humanities",
             "type": "arrow"
         },
         {
-            "id": "25086",
-            "source": "25086",
-            "target": "multidisciplinary",
+            "id": "1263246",
+            "source": "1263246",
+            "target": "arts and humanities",
+            "type": "arrow"
+        },
+        {
+            "id": "409814",
+            "source": "409814",
+            "target": "economics, econometrics and finance",
+            "type": "arrow"
+        },
+        {
+            "id": "1262899",
+            "source": "1262899",
+            "target": "economics, econometrics and finance",
+            "type": "arrow"
+        },
+        {
+            "id": "4289480",
+            "source": "4289480",
+            "target": "economics, econometrics and finance",
             "type": "arrow"
         },
         {
             "id": "1095243",
             "source": "1095243",
-            "target": "medicine",
-            "type": "arrow"
-        },
-        {
-            "id": "1100163",
-            "source": "1100163",
             "target": "medicine",
             "type": "arrow"
         },
@@ -2691,99 +1770,105 @@
             "type": "arrow"
         },
         {
-            "id": "1123942",
-            "source": "1123942",
-            "target": "nursing",
+            "id": "421836",
+            "source": "421836",
+            "target": "psychology",
             "type": "arrow"
         },
         {
-            "id": "1124186",
-            "source": "1124186",
-            "target": "nursing",
+            "id": "1876505",
+            "source": "1876505",
+            "target": "psychology",
             "type": "arrow"
         },
         {
-            "id": "1263149",
-            "source": "1263149",
-            "target": "nursing",
+            "id": "1273166",
+            "source": "1273166",
+            "target": "mathematics",
             "type": "arrow"
         },
         {
-            "id": "166412",
-            "source": "166412",
-            "target": "earth and planetary sciences",
+            "id": "2436831",
+            "source": "2436831",
+            "target": "mathematics",
+            "type": "arrow"
+        },
+        {
+            "id": "3875149",
+            "source": "3875149",
+            "target": "multidisciplinary",
             "type": "arrow"
         },
         {
             "id": "Undefined",
             "source": "Undefined",
-            "target": "twitter",
-            "type": "arrow"
-        },
-        {
-            "id": "computer science",
-            "source": "computer science",
-            "target": "twitter",
-            "type": "arrow"
-        },
-        {
-            "id": "decision sciences",
-            "source": "decision sciences",
-            "target": "twitter",
-            "type": "arrow"
-        },
-        {
-            "id": "social sciences",
-            "source": "social sciences",
-            "target": "twitter",
-            "type": "arrow"
-        },
-        {
-            "id": "mathematics",
-            "source": "mathematics",
-            "target": "twitter",
-            "type": "arrow"
-        },
-        {
-            "id": "engineering",
-            "source": "engineering",
-            "target": "twitter",
-            "type": "arrow"
-        },
-        {
-            "id": "business, management and accounting",
-            "source": "business, management and accounting",
-            "target": "twitter",
-            "type": "arrow"
-        },
-        {
-            "id": "arts and humanities",
-            "source": "arts and humanities",
-            "target": "twitter",
-            "type": "arrow"
-        },
-        {
-            "id": "multidisciplinary",
-            "source": "multidisciplinary",
-            "target": "twitter",
-            "type": "arrow"
-        },
-        {
-            "id": "medicine",
-            "source": "medicine",
-            "target": "twitter",
+            "target": "facebook",
             "type": "arrow"
         },
         {
             "id": "nursing",
             "source": "nursing",
-            "target": "twitter",
+            "target": "facebook",
             "type": "arrow"
         },
         {
-            "id": "earth and planetary sciences",
-            "source": "earth and planetary sciences",
-            "target": "twitter",
+            "id": "computer science",
+            "source": "computer science",
+            "target": "facebook",
+            "type": "arrow"
+        },
+        {
+            "id": "social sciences",
+            "source": "social sciences",
+            "target": "facebook",
+            "type": "arrow"
+        },
+        {
+            "id": "engineering",
+            "source": "engineering",
+            "target": "facebook",
+            "type": "arrow"
+        },
+        {
+            "id": "business, management and accounting",
+            "source": "business, management and accounting",
+            "target": "facebook",
+            "type": "arrow"
+        },
+        {
+            "id": "arts and humanities",
+            "source": "arts and humanities",
+            "target": "facebook",
+            "type": "arrow"
+        },
+        {
+            "id": "economics, econometrics and finance",
+            "source": "economics, econometrics and finance",
+            "target": "facebook",
+            "type": "arrow"
+        },
+        {
+            "id": "medicine",
+            "source": "medicine",
+            "target": "facebook",
+            "type": "arrow"
+        },
+        {
+            "id": "psychology",
+            "source": "psychology",
+            "target": "facebook",
+            "type": "arrow"
+        },
+        {
+            "id": "mathematics",
+            "source": "mathematics",
+            "target": "facebook",
+            "type": "arrow"
+        },
+        {
+            "id": "multidisciplinary",
+            "source": "multidisciplinary",
+            "target": "facebook",
             "type": "arrow"
         }
     ]

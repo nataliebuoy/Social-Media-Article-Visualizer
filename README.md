@@ -12,6 +12,7 @@
 -   psycopg2
 -   WTForms
 -   SQLAlchemy
+-   Flask_SQLAlchemy
 
 ###Database 
 
@@ -29,3 +30,7 @@
 3. Follow terminal link to localhost webpage
 
 4. enter a keyword into keyword search and select enter to obtain output
+
+#Bugs
+
+1. Web cache must be cleared prior to loading different keyword graph.
